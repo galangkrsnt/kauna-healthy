@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     locale: "id_ID",
   },
   robots: { index: true, follow: true },
+  verification: { google: "H16muMAwoIrAKJyB5g-9UPA6gmQmRYewTz7Jar3u_ok" },
   alternates: { canonical: "https://kauna-healthy.vercel.app" },
 };
 
