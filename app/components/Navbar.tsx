@@ -15,12 +15,14 @@ const navLinks = {
     { href: "/kalori", label: "Kalori Harian" },
     { href: "/air", label: "Air Minum" },
     { href: "/lemak", label: "Lemak Tubuh" },
+    { href: "/anak", label: "BMI Anak" },
   ],
   en: [
     { href: "/", label: "BMI Calculator" },
     { href: "/kalori", label: "Daily Calories" },
     { href: "/air", label: "Water Intake" },
     { href: "/lemak", label: "Body Fat" },
+    { href: "/anak", label: "Child BMI" },
   ],
 };
 
