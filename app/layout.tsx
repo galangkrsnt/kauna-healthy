@@ -35,6 +35,13 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="id" className={geist.variable}>
+      <head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6350798258567080"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className="min-h-screen bg-gray-50 text-gray-900 antialiased">
         {children}
       </body>
