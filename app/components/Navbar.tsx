@@ -13,10 +13,12 @@ const navLinks = {
   id: [
     { href: "/", label: "Kalkulator BMI" },
     { href: "/kalori", label: "Kalori Harian" },
+    { href: "/air", label: "Air Minum" },
   ],
   en: [
     { href: "/", label: "BMI Calculator" },
     { href: "/kalori", label: "Daily Calories" },
+    { href: "/air", label: "Water Intake" },
   ],
 };
 
