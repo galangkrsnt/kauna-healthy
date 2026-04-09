@@ -14,11 +14,13 @@ const navLinks = {
     { href: "/", label: "Kalkulator BMI" },
     { href: "/kalori", label: "Kalori Harian" },
     { href: "/air", label: "Air Minum" },
+    { href: "/lemak", label: "Lemak Tubuh" },
   ],
   en: [
     { href: "/", label: "BMI Calculator" },
     { href: "/kalori", label: "Daily Calories" },
     { href: "/air", label: "Water Intake" },
+    { href: "/lemak", label: "Body Fat" },
   ],
 };
 
