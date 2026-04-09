@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import BmiCalculator from "./BmiCalculator";
+import Navbar from "./Navbar";
 
 export type Lang = "id" | "en";
 
@@ -194,29 +195,7 @@ export default function HomeClient() {
 
   return (
     <main className="max-w-2xl mx-auto px-4 py-8 pb-20">
-      {/* Top bar */}
-      <div className="flex items-center justify-between mb-8">
-        <div className="flex items-center gap-2">
-          <span className="text-2xl">🌿</span>
-          <span className="text-emerald-700 font-bold text-base tracking-tight">
-            {tx.brand}
-          </span>
-        </div>
-
-        {/* Language toggle */}
-        <button
-          onClick={() => setLang(lang === "id" ? "en" : "id")}
-          className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-emerald-200 bg-white text-sm font-medium text-emerald-700 hover:bg-emerald-50 transition-all shadow-sm"
-          aria-label="Switch language"
-        >
-          <span className="text-base leading-none">
-            {lang === "id" ? "🇮🇩" : "🇬🇧"}
-          </span>
-          <span>{lang === "id" ? "ID" : "EN"}</span>
-          <span className="text-emerald-400">⇄</span>
-          <span>{lang === "id" ? "EN" : "ID"}</span>
-        </button>
-      </div>
+      <Navbar lang={lang} onToggleLang={() => setLang(lang === "id" ? "en" : "id")} />
 
       {/* Header */}
       <header className="text-center mb-8 px-2">
