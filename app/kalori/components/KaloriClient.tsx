@@ -1,9 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import Navbar from "../../components/Navbar";
 import TdeeCalculator from "./TdeeCalculator";
-import type { Lang } from "../../components/HomeClient";
+import { useLang } from "../../hooks/useLang";
 
 const content = {
   id: {
@@ -75,12 +74,12 @@ const content = {
 };
 
 export default function KaloriClient() {
-  const [lang, setLang] = useState<Lang>("id");
+  const { lang, toggleLang } = useLang();
   const tx = content[lang];
 
   return (
     <main className="max-w-2xl mx-auto px-4 py-8 pb-20">
-      <Navbar lang={lang} onToggleLang={() => setLang(lang === "id" ? "en" : "id")} />
+      <Navbar lang={lang} onToggleLang={toggleLang} />
 
       {/* Header */}
       <header className="text-center mb-8 px-2">

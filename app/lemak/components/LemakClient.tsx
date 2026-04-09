@@ -1,9 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import Navbar from "../../components/Navbar";
 import LemakCalculator from "./LemakCalculator";
-import type { Lang } from "../../components/HomeClient";
+import { useLang } from "../../hooks/useLang";
 
 const content = {
   id: {
@@ -65,12 +64,12 @@ const content = {
 };
 
 export default function LemakClient() {
-  const [lang, setLang] = useState<Lang>("id");
+  const { lang, toggleLang } = useLang();
   const tx = content[lang];
 
   return (
     <main className="max-w-2xl mx-auto px-4 py-8 pb-20">
-      <Navbar lang={lang} onToggleLang={() => setLang(lang === "id" ? "en" : "id")} />
+      <Navbar lang={lang} onToggleLang={toggleLang} />
 
       <header className="text-center mb-8 px-2">
         <h1 className="text-3xl sm:text-4xl font-bold text-emerald-900 leading-tight mb-3">

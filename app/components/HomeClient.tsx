@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import BmiCalculator from "./BmiCalculator";
 import Navbar from "./Navbar";
+import { useLang } from "../hooks/useLang";
 
 export type Lang = "id" | "en";
 
@@ -190,12 +190,12 @@ const bmiTable = {
 };
 
 export default function HomeClient() {
-  const [lang, setLang] = useState<Lang>("id");
+  const { lang, toggleLang } = useLang();
   const tx = t[lang];
 
   return (
     <main className="max-w-2xl mx-auto px-4 py-8 pb-20">
-      <Navbar lang={lang} onToggleLang={() => setLang(lang === "id" ? "en" : "id")} />
+      <Navbar lang={lang} onToggleLang={toggleLang} />
 
       {/* Header */}
       <header className="text-center mb-8 px-2">
