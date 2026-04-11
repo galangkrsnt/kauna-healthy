@@ -3,31 +3,31 @@ import type { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://kauna-healthy.vercel.app",
+      url: "https://healthy.getkauna.com",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
     },
     {
-      url: "https://kauna-healthy.vercel.app/kalori",
+      url: "https://healthy.getkauna.com/kalori",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
-      url: "https://kauna-healthy.vercel.app/air",
+      url: "https://healthy.getkauna.com/air",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
-      url: "https://kauna-healthy.vercel.app/lemak",
+      url: "https://healthy.getkauna.com/lemak",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
-      url: "https://kauna-healthy.vercel.app/anak",
+      url: "https://healthy.getkauna.com/anak",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,

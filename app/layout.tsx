@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   verification: { google: "H16muMAwoIrAKJyB5g-9UPA6gmQmRYewTz7Jar3u_ok" },
-  alternates: { canonical: "https://kauna-healthy.vercel.app" },
+  alternates: { canonical: "https://healthy.getkauna.com" },
 };
 
 export default function RootLayout({

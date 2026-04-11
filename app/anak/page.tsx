@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "id_ID",
   },
-  alternates: { canonical: "https://kauna-healthy.vercel.app/anak" },
+  alternates: { canonical: "https://healthy.getkauna.com/anak" },
 };
 
 const schemaMarkup = {
@@ -26,7 +26,7 @@ const schemaMarkup = {
   "@type": "WebApplication",
   name: "Kalkulator BMI Anak & Berat Badan Ideal Anak",
   description: "Hitung BMI anak berdasarkan usia menggunakan standar CDC Growth Chart.",
-  url: "https://kauna-healthy.vercel.app/anak",
+  url: "https://healthy.getkauna.com/anak",
   applicationCategory: "HealthApplication",
   operatingSystem: "All",
   inLanguage: ["id", "en"],

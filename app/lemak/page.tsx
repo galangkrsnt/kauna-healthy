@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "id_ID",
   },
-  alternates: { canonical: "https://kauna-healthy.vercel.app/lemak" },
+  alternates: { canonical: "https://healthy.getkauna.com/lemak" },
 };
 
 const schemaMarkup = {
@@ -26,7 +26,7 @@ const schemaMarkup = {
   "@type": "WebApplication",
   name: "Kalkulator Persentase Lemak Tubuh",
   description: "Hitung persentase lemak tubuh berdasarkan BMI, usia, dan jenis kelamin.",
-  url: "https://kauna-healthy.vercel.app/lemak",
+  url: "https://healthy.getkauna.com/lemak",
   applicationCategory: "HealthApplication",
   operatingSystem: "All",
   inLanguage: ["id", "en"],

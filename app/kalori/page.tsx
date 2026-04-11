@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "id_ID",
   },
-  alternates: { canonical: "https://kauna-healthy.vercel.app/kalori" },
+  alternates: { canonical: "https://healthy.getkauna.com/kalori" },
 };
 
 const schemaMarkup = {
@@ -27,7 +27,7 @@ const schemaMarkup = {
   "@type": "WebApplication",
   name: "Kalkulator Kalori Harian & TDEE",
   description: "Hitung kebutuhan kalori harian kamu berdasarkan usia, berat, tinggi, dan aktivitas.",
-  url: "https://kauna-healthy.vercel.app/kalori",
+  url: "https://healthy.getkauna.com/kalori",
   applicationCategory: "HealthApplication",
   operatingSystem: "All",
   inLanguage: ["id", "en"],

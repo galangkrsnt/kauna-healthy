@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "id_ID",
   },
-  alternates: { canonical: "https://kauna-healthy.vercel.app/air" },
+  alternates: { canonical: "https://healthy.getkauna.com/air" },
 };
 
 const schemaMarkup = {
@@ -27,7 +27,7 @@ const schemaMarkup = {
   "@type": "WebApplication",
   name: "Kalkulator Kebutuhan Air Minum Harian",
   description: "Hitung kebutuhan air minum harian berdasarkan berat badan, aktivitas, dan cuaca.",
-  url: "https://kauna-healthy.vercel.app/air",
+  url: "https://healthy.getkauna.com/air",
   applicationCategory: "HealthApplication",
   operatingSystem: "All",
   inLanguage: ["id", "en"],
