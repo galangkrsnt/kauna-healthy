@@ -31,7 +31,7 @@ const content = {
     faq3Q: "Apakah persentil ke-50 artinya paling ideal?",
     faq3A:
       "Tidak harus. Anak yang sehat bisa berada di persentil berapa pun antara 5–85. Yang penting adalah konsistensi pertumbuhan — apakah kurva pertumbuhannya stabil dari waktu ke waktu.",
-    footer: "© 2025 Kauna Healthy · Informasi ini bukan pengganti saran medis profesional.",
+    footer: "© 2026 Kauna Healthy · Informasi ini bukan pengganti saran medis profesional.",
   },
   en: {
     title: "Child BMI & Ideal Weight Calculator",
@@ -59,7 +59,7 @@ const content = {
     faq3Q: "Does the 50th percentile mean most ideal?",
     faq3A:
       "Not necessarily. A healthy child can be anywhere between the 5th and 85th percentile. What matters most is consistent growth over time — whether the growth curve is stable.",
-    footer: "© 2025 Kauna Healthy · This information is not a substitute for professional medical advice.",
+    footer: "© 2026 Kauna Healthy · This information is not a substitute for professional medical advice.",
   },
 };
 

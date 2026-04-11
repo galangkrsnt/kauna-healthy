@@ -26,7 +26,7 @@ const content = {
     faq3A:
       "Cara paling mudah: lihat warna urine. Kuning pucat seperti lemonade = terhidrasi baik. Kuning tua atau oranye = kurang minum. Jernih seperti air = terlalu banyak minum.",
     footer:
-      "© 2025 Kauna Healthy · Informasi ini bukan pengganti saran medis profesional.",
+      "© 2026 Kauna Healthy · Informasi ini bukan pengganti saran medis profesional.",
   },
   en: {
     title: "Daily Water Intake Calculator",
@@ -49,7 +49,7 @@ const content = {
     faq3A:
       "The easiest way: check your urine color. Pale yellow like lemonade = well hydrated. Dark yellow or orange = drink more. Clear like water = you may be overhydrating.",
     footer:
-      "© 2025 Kauna Healthy · This information is not a substitute for professional medical advice.",
+      "© 2026 Kauna Healthy · This information is not a substitute for professional medical advice.",
   },
 };
 

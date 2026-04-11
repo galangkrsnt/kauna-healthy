@@ -31,7 +31,7 @@ const content = {
     faq3Q: "Kenapa perempuan butuh lebih banyak lemak dari laki-laki?",
     faq3A:
       "Perempuan secara biologis membutuhkan lebih banyak lemak esensial untuk fungsi hormonal, reproduksi, dan kesehatan tulang. Ini normal dan sehat.",
-    footer: "© 2025 Kauna Healthy · Informasi ini bukan pengganti saran medis profesional.",
+    footer: "© 2026 Kauna Healthy · Informasi ini bukan pengganti saran medis profesional.",
   },
   en: {
     title: "Body Fat Percentage Calculator",
@@ -59,7 +59,7 @@ const content = {
     faq3Q: "Why do women need more body fat than men?",
     faq3A:
       "Women biologically require more essential fat for hormonal function, reproduction, and bone health. This is normal and healthy.",
-    footer: "© 2025 Kauna Healthy · This information is not a substitute for professional medical advice.",
+    footer: "© 2026 Kauna Healthy · This information is not a substitute for professional medical advice.",
   },
 };
 

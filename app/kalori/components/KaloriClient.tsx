@@ -36,7 +36,7 @@ const content = {
     faq3A:
       "Defisit kalori terjadi ketika kamu makan lebih sedikit dari TDEE-mu. Defisit 500 kcal/hari setara dengan penurunan sekitar 0.5 kg per minggu.",
     footer:
-      "© 2025 Kauna Healthy · Informasi ini bukan pengganti saran medis profesional.",
+      "© 2026 Kauna Healthy · Informasi ini bukan pengganti saran medis profesional.",
   },
   en: {
     title: "Daily Calorie & TDEE Calculator",
@@ -69,7 +69,7 @@ const content = {
     faq3A:
       "A calorie deficit occurs when you eat less than your TDEE. A 500 kcal/day deficit equals roughly 0.5 kg of weight loss per week.",
     footer:
-      "© 2025 Kauna Healthy · This information is not a substitute for professional medical advice.",
+      "© 2026 Kauna Healthy · This information is not a substitute for professional medical advice.",
   },
 };
 

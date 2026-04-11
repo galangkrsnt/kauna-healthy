@@ -89,7 +89,7 @@ export const t = {
     ),
 
     footer:
-      "© 2025 Kauna Healthy · Informasi ini bukan pengganti saran medis profesional.",
+      "© 2026 Kauna Healthy · Informasi ini bukan pengganti saran medis profesional.",
   },
 
   en: {
@@ -170,7 +170,7 @@ export const t = {
     ),
 
     footer:
-      "© 2025 Kauna Healthy · This information is not a substitute for professional medical advice.",
+      "© 2026 Kauna Healthy · This information is not a substitute for professional medical advice.",
   },
 } as const;
 
