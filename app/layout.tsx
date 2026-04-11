@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     locale: "id_ID",
   },
   robots: { index: true, follow: true },
-  verification: { google: "H16muMAwoIrAKJyB5g-9UPA6gmQmRYewTz7Jar3u_ok" },
+  verification: { google: ["H16muMAwoIrAKJyB5g-9UPA6gmQmRYewTz7Jar3u_ok", "TNPF__dVjwDmOm_Qvb6urGWaiWwv531b5y0tcCaWfEA"] },
   alternates: { canonical: "https://healthy.getkauna.com" },
 };
 
