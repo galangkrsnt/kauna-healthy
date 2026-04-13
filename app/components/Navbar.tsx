@@ -16,6 +16,7 @@ const navLinks = {
     { href: "/air", label: "Air Minum" },
     { href: "/lemak", label: "Lemak Tubuh" },
     { href: "/anak", label: "BMI Anak" },
+    { href: "/pinggang", label: "Lingkar Pinggang" },
   ],
   en: [
     { href: "/", label: "BMI Calculator" },
@@ -23,6 +24,7 @@ const navLinks = {
     { href: "/air", label: "Water Intake" },
     { href: "/lemak", label: "Body Fat" },
     { href: "/anak", label: "Child BMI" },
+    { href: "/pinggang", label: "Waist Size" },
   ],
 };
 
