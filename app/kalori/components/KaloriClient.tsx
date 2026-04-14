@@ -1,6 +1,6 @@
 "use client";
 
-import Navbar from "../../components/Navbar";
+import Sidebar from "../../components/Sidebar";
 import TdeeCalculator from "./TdeeCalculator";
 import { useLang } from "../../hooks/useLang";
 
@@ -78,8 +78,9 @@ export default function KaloriClient() {
   const tx = content[lang];
 
   return (
-    <main className="max-w-2xl mx-auto px-4 py-8 pb-20">
-      <Navbar lang={lang} onToggleLang={toggleLang} />
+    <div className="flex min-h-screen bg-gray-50">
+      <Sidebar lang={lang} onToggleLang={toggleLang} />
+      <main className="flex-1 min-w-0 max-w-2xl px-4 pt-16 pb-20 md:pt-8 md:px-8">
 
       {/* Header */}
       <header className="text-center mb-8 px-2">
@@ -151,5 +152,6 @@ export default function KaloriClient() {
         <p>{tx.footer}</p>
       </footer>
     </main>
+    </div>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import Navbar from "../../components/Navbar";
+import Sidebar from "../../components/Sidebar";
 import AirCalculator from "./AirCalculator";
 import { useLang } from "../../hooks/useLang";
 
@@ -74,8 +74,9 @@ export default function AirClient() {
   };
 
   return (
-    <main className="max-w-2xl mx-auto px-4 py-8 pb-20">
-      <Navbar lang={lang} onToggleLang={toggleLang} />
+    <div className="flex min-h-screen bg-gray-50">
+      <Sidebar lang={lang} onToggleLang={toggleLang} />
+      <main className="flex-1 min-w-0 max-w-2xl px-4 pt-16 pb-20 md:pt-8 md:px-8">
 
       {/* Header */}
       <header className="text-center mb-8 px-2">
@@ -140,5 +141,6 @@ export default function AirClient() {
         <p>{tx.footer}</p>
       </footer>
     </main>
+    </div>
   );
 }
