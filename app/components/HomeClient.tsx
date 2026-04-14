@@ -88,6 +88,17 @@ export const t = {
       </>
     ),
 
+    articleTitle: "BMI Normal untuk Orang Indonesia Berapa?",
+    articleP1: "Standar BMI yang banyak beredar menggunakan patokan WHO global — tapi orang Asia, termasuk Indonesia, memiliki komposisi tubuh yang berbeda. Pada BMI yang sama, orang Asia cenderung memiliki persentase lemak tubuh yang lebih tinggi dibanding orang Eropa.",
+    articleP2: "Itulah kenapa WHO menerbitkan panduan khusus untuk populasi Asia-Pasifik dengan batas kategori yang lebih ketat:",
+    articleTableTitle: "Tabel BMI Asia-Pasifik (WHO)",
+    articleMenTitle: "BMI Ideal untuk Pria Indonesia",
+    articleMenBody: "Pria Indonesia dianggap memiliki berat badan ideal jika BMI berada di rentang 18.5–22.9. BMI di atas 23 sudah masuk zona waspada, dan di atas 27.5 dikategorikan obesitas menurut standar Asia-Pasifik.",
+    articleWomenTitle: "BMI Ideal untuk Wanita Indonesia",
+    articleWomenBody: "Wanita Indonesia memiliki patokan yang sama: BMI 18.5–22.9 adalah ideal. Namun secara alami wanita memiliki persentase lemak tubuh lebih tinggi dari pria pada BMI yang sama, jadi selalu pertimbangkan faktor lain seperti lingkar pinggang dan persentase lemak tubuh.",
+    articleNoteTitle: "Catatan Penting",
+    articleNoteBody: "BMI adalah alat skrining, bukan diagnosis. Angka BMI tidak membedakan otot dari lemak, dan tidak memperhitungkan distribusi lemak di tubuh. Gunakan bersama pengukuran lain seperti lingkar pinggang untuk gambaran kesehatan yang lebih lengkap.",
+
     footer:
       "© 2026 Kauna Healthy · Informasi ini bukan pengganti saran medis profesional.",
   },
@@ -169,6 +180,17 @@ export const t = {
       </>
     ),
 
+    articleTitle: "What is a Normal BMI for Indonesians?",
+    articleP1: "The BMI standards most people know use WHO global thresholds — but Asians, including Indonesians, have different body compositions. At the same BMI, Asians tend to have a higher body fat percentage than Europeans.",
+    articleP2: "That's why WHO issued specific guidelines for the Asia-Pacific population with stricter category cutoffs:",
+    articleTableTitle: "Asia-Pacific BMI Table (WHO)",
+    articleMenTitle: "Ideal BMI for Indonesian Men",
+    articleMenBody: "Indonesian men are considered to have an ideal weight if their BMI falls between 18.5–22.9. A BMI above 23 is already a warning zone, and above 27.5 is classified as obese by Asia-Pacific standards.",
+    articleWomenTitle: "Ideal BMI for Indonesian Women",
+    articleWomenBody: "Indonesian women have the same reference range: BMI 18.5–22.9 is ideal. However, women naturally have a higher body fat percentage than men at the same BMI, so always consider other factors like waist circumference and body fat percentage.",
+    articleNoteTitle: "Important Note",
+    articleNoteBody: "BMI is a screening tool, not a diagnosis. BMI does not distinguish muscle from fat, and does not account for fat distribution in the body. Use it alongside other measurements like waist circumference for a more complete health picture.",
+
     footer:
       "© 2026 Kauna Healthy · This information is not a substitute for professional medical advice.",
   },
@@ -186,6 +208,21 @@ const bmiTable = {
     { range: "18.5 – 24.9", category: "Normal", color: "text-green-600" },
     { range: "25 – 29.9", category: "Overweight", color: "text-yellow-600" },
     { range: "≥ 30", category: "Obese", color: "text-red-600" },
+  ],
+};
+
+const bmiTableAsiaPacific = {
+  id: [
+    { range: "< 18.5", category: "Kekurangan Berat Badan", color: "text-blue-600" },
+    { range: "18.5 – 22.9", category: "Normal", color: "text-green-600" },
+    { range: "23 – 27.4", category: "Kelebihan Berat Badan", color: "text-yellow-600" },
+    { range: "≥ 27.5", category: "Obesitas", color: "text-red-600" },
+  ],
+  en: [
+    { range: "< 18.5", category: "Underweight", color: "text-blue-600" },
+    { range: "18.5 – 22.9", category: "Normal", color: "text-green-600" },
+    { range: "23 – 27.4", category: "Overweight", color: "text-yellow-600" },
+    { range: "≥ 27.5", category: "Obese", color: "text-red-600" },
   ],
 };
 
@@ -324,6 +361,51 @@ export default function HomeClient() {
                 <p className="text-sm leading-relaxed text-gray-600">{item.a}</p>
               </div>
             ))}
+          </div>
+        </section>
+      </article>
+
+      {/* SEO Article */}
+      <article className="mt-10 space-y-6 text-emerald-950/80">
+        <section>
+          <h2 className="text-xl font-bold text-emerald-900 mb-3">{tx.articleTitle}</h2>
+          <p className="leading-relaxed text-sm sm:text-base mb-3">{tx.articleP1}</p>
+          <p className="leading-relaxed text-sm sm:text-base mb-4">{tx.articleP2}</p>
+
+          <h3 className="text-base font-semibold text-emerald-800 mb-3">{tx.articleTableTitle}</h3>
+          <div className="overflow-hidden rounded-2xl border border-emerald-100 shadow-sm mb-6">
+            <table className="w-full text-sm">
+              <thead className="bg-emerald-50">
+                <tr>
+                  <th className="text-left px-4 py-3 font-semibold text-emerald-700">{tx.tableColRange}</th>
+                  <th className="text-left px-4 py-3 font-semibold text-emerald-700">{tx.tableColCategory}</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-emerald-50">
+                {bmiTableAsiaPacific[lang].map((row) => (
+                  <tr key={row.range} className="bg-white hover:bg-emerald-50/40 transition-colors">
+                    <td className="px-4 py-3 font-mono text-gray-700">{row.range}</td>
+                    <td className={`px-4 py-3 font-semibold ${row.color}`}>{row.category}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="space-y-4">
+            <div>
+              <h3 className="text-base font-semibold text-emerald-800 mb-1">{tx.articleMenTitle}</h3>
+              <p className="text-sm leading-relaxed text-gray-600">{tx.articleMenBody}</p>
+            </div>
+            <div>
+              <h3 className="text-base font-semibold text-emerald-800 mb-1">{tx.articleWomenTitle}</h3>
+              <p className="text-sm leading-relaxed text-gray-600">{tx.articleWomenBody}</p>
+            </div>
+          </div>
+
+          <div className="mt-5 rounded-2xl bg-amber-50 border border-amber-200 p-4">
+            <p className="font-semibold text-amber-800 mb-1 text-sm">{tx.articleNoteTitle}</p>
+            <p className="text-sm leading-relaxed text-amber-700/80">{tx.articleNoteBody}</p>
           </div>
         </section>
       </article>
