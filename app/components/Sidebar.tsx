@@ -28,6 +28,12 @@ const navGroups = {
         { href: "/air", label: "Air Minum" },
       ],
     },
+    {
+      label: "Artikel",
+      links: [
+        { href: "/#bmi-normal-indonesia", label: "BMI Normal Indonesia" },
+      ],
+    },
   ],
   en: [
     {
@@ -46,13 +52,19 @@ const navGroups = {
         { href: "/air", label: "Water Intake" },
       ],
     },
+    {
+      label: "Articles",
+      links: [
+        { href: "/#bmi-normal-indonesia", label: "BMI for Indonesians" },
+      ],
+    },
   ],
 };
 
 export default function Sidebar({ lang, onToggleLang }: Props) {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [expanded, setExpanded] = useState<Record<number, boolean>>({ 0: true, 1: true });
+  const [expanded, setExpanded] = useState<Record<number, boolean>>({ 0: true, 1: true, 2: true });
 
   const toggleGroup = (i: number) =>
     setExpanded((prev) => ({ ...prev, [i]: !prev[i] }));

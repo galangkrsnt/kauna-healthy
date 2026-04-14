@@ -80,7 +80,7 @@ export default function PinggangClient() {
   return (
     <div className="flex min-h-screen bg-gray-50">
       <Sidebar lang={lang} onToggleLang={toggleLang} />
-      <main className="flex-1 min-w-0 max-w-2xl px-4 pt-16 pb-20 md:pt-8 md:px-8">
+      <main className="flex-1 min-w-0 px-4 pt-16 pb-20 md:pt-8 md:px-10">
 
       <header className="text-center mb-8 px-2">
         <h1 className="text-3xl sm:text-4xl font-bold text-emerald-900 leading-tight mb-3">{tx.title}</h1>
