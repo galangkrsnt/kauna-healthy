@@ -32,6 +32,10 @@ const navGroups = {
       label: "Artikel",
       links: [
         { href: "/#bmi-normal-indonesia", label: "BMI Normal Indonesia" },
+        { href: "/kalori#kalori-harian-artikel", label: "Kebutuhan Kalori Harian" },
+        { href: "/air#kebutuhan-air-artikel", label: "Kebutuhan Air Minum" },
+        { href: "/lemak#lemak-tubuh-artikel", label: "Mengukur Lemak Tubuh" },
+        { href: "/anak#berat-badan-anak-artikel", label: "Berat Badan Ideal Anak" },
       ],
     },
   ],
@@ -56,6 +60,10 @@ const navGroups = {
       label: "Articles",
       links: [
         { href: "/#bmi-normal-indonesia", label: "BMI for Indonesians" },
+        { href: "/kalori#kalori-harian-artikel", label: "Daily Calorie Needs" },
+        { href: "/air#kebutuhan-air-artikel", label: "Daily Water Needs" },
+        { href: "/lemak#lemak-tubuh-artikel", label: "Measuring Body Fat" },
+        { href: "/anak#berat-badan-anak-artikel", label: "Ideal Child Weight" },
       ],
     },
   ],

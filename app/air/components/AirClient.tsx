@@ -25,6 +25,25 @@ const content = {
     faq3Q: "Bagaimana tahu kalau sudah cukup minum air?",
     faq3A:
       "Cara paling mudah: lihat warna urine. Kuning pucat seperti lemonade = terhidrasi baik. Kuning tua atau oranye = kurang minum. Jernih seperti air = terlalu banyak minum.",
+    articleTitle: "Berapa Kebutuhan Air Minum Per Hari yang Sebenarnya?",
+    articleP1: "Anjuran minum 8 gelas sehari (sekitar 2 liter) adalah mitos yang sudah terlalu disederhanakan. Kebutuhan air aktualmu sangat bergantung pada berat badan, aktivitas, iklim, dan kondisi kesehatan.",
+    articleP2: "Berikut faktor-faktor yang mempengaruhi kebutuhan air harianmu:",
+    articleFactors: [
+      "Berat badan — orang berbadan besar membutuhkan lebih banyak air untuk menjalankan fungsi tubuh.",
+      "Aktivitas fisik — olahraga intens bisa meningkatkan kebutuhan air hingga 500–1.000 ml ekstra per sesi.",
+      "Iklim tropis — tinggal di Indonesia yang panas dan lembab membuat tubuh lebih banyak berkeringat.",
+      "Kondisi khusus — hamil (+300 ml/hari), menyusui (+700 ml/hari), sakit demam atau diare membutuhkan lebih banyak cairan.",
+    ],
+    articleDehydTitle: "Tanda-Tanda Kamu Kurang Minum",
+    articleDehydSigns: [
+      "Urine berwarna kuning tua atau oranye",
+      "Jarang buang air kecil (kurang dari 4x sehari)",
+      "Mulut dan bibir kering",
+      "Mudah lelah dan sulit konsentrasi",
+      "Pusing saat berdiri tiba-tiba",
+    ],
+    articleNoteTitle: "Catatan Penting",
+    articleNoteBody: "Air putih adalah sumber hidrasi terbaik. Kopi, teh, dan jus bisa berkontribusi, tapi jangan jadikan satu-satunya sumber. Makan sayur dan buah dengan kandungan air tinggi (semangka, timun, selada) juga membantu hidrasi.",
     footer:
       "© 2026 Kauna Healthy · Informasi ini bukan pengganti saran medis profesional.",
   },
@@ -48,6 +67,25 @@ const content = {
     faq3Q: "How do I know if I'm drinking enough water?",
     faq3A:
       "The easiest way: check your urine color. Pale yellow like lemonade = well hydrated. Dark yellow or orange = drink more. Clear like water = you may be overhydrating.",
+    articleTitle: "How Much Water Do You Actually Need Per Day?",
+    articleP1: "The advice to drink 8 glasses a day (~2 liters) is an oversimplification. Your actual water needs depend heavily on your body weight, activity level, climate, and health conditions.",
+    articleP2: "Here are the key factors that influence your daily water needs:",
+    articleFactors: [
+      "Body weight — larger bodies need more water to support bodily functions.",
+      "Physical activity — intense exercise can increase water needs by 500–1,000 ml extra per session.",
+      "Tropical climate — living in a hot and humid environment means more sweating.",
+      "Special conditions — pregnancy (+300 ml/day), breastfeeding (+700 ml/day), fever or diarrhea all require more fluids.",
+    ],
+    articleDehydTitle: "Signs You're Not Drinking Enough",
+    articleDehydSigns: [
+      "Dark yellow or orange urine",
+      "Infrequent urination (less than 4x per day)",
+      "Dry mouth and lips",
+      "Fatigue and difficulty concentrating",
+      "Dizziness when standing up quickly",
+    ],
+    articleNoteTitle: "Important Note",
+    articleNoteBody: "Plain water is the best hydration source. Coffee, tea, and juice can contribute, but shouldn't be your only source. Eating water-rich foods (watermelon, cucumber, lettuce) also helps with hydration.",
     footer:
       "© 2026 Kauna Healthy · This information is not a substitute for professional medical advice.",
   },
@@ -133,6 +171,38 @@ export default function AirClient() {
                 <p className="text-sm leading-relaxed text-gray-600">{item.a}</p>
               </div>
             ))}
+          </div>
+        </section>
+      </article>
+
+      <article id="kebutuhan-air-artikel" className="mt-10 space-y-6 text-emerald-950/80">
+        <section>
+          <h2 className="text-xl font-bold text-emerald-900 mb-3">{tx.articleTitle}</h2>
+          <p className="leading-relaxed text-sm sm:text-base mb-3">{tx.articleP1}</p>
+          <p className="leading-relaxed text-sm sm:text-base mb-4">{tx.articleP2}</p>
+
+          <div className="space-y-2 mb-6">
+            {tx.articleFactors.map((factor, i) => (
+              <div key={i} className="flex gap-3 items-start rounded-2xl bg-cyan-50 border border-cyan-100 p-4">
+                <span className="text-cyan-500 font-black text-base mt-0.5 shrink-0">{i + 1}.</span>
+                <p className="text-sm leading-relaxed text-gray-600">{factor}</p>
+              </div>
+            ))}
+          </div>
+
+          <h3 className="text-base font-semibold text-emerald-800 mb-3">{tx.articleDehydTitle}</h3>
+          <div className="space-y-2 mb-5">
+            {tx.articleDehydSigns.map((sign, i) => (
+              <div key={i} className="flex gap-3 items-start rounded-2xl bg-red-50 border border-red-100 p-3">
+                <span className="text-red-400 font-black text-base mt-0.5 shrink-0">⚠</span>
+                <p className="text-sm leading-relaxed text-gray-600">{sign}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="rounded-2xl bg-amber-50 border border-amber-200 p-4">
+            <p className="font-semibold text-amber-800 mb-1 text-sm">{tx.articleNoteTitle}</p>
+            <p className="text-sm leading-relaxed text-amber-700/80">{tx.articleNoteBody}</p>
           </div>
         </section>
       </article>

@@ -31,6 +31,23 @@ const content = {
     faq3Q: "Apakah persentil ke-50 artinya paling ideal?",
     faq3A:
       "Tidak harus. Anak yang sehat bisa berada di persentil berapa pun antara 5–85. Yang penting adalah konsistensi pertumbuhan — apakah kurva pertumbuhannya stabil dari waktu ke waktu.",
+    articleTitle: "Berat Badan Ideal Anak Berdasarkan Usia",
+    articleP1: "Pertumbuhan anak tidak linear — ada periode lonjakan cepat (growth spurt) dan periode melambat yang keduanya normal. Yang terpenting bukan angka di timbangan, tapi konsistensi kurva pertumbuhan dari waktu ke waktu.",
+    articleP2: "Berikut kisaran berat badan dan tinggi badan rata-rata anak Indonesia berdasarkan usia (referensi WHO/CDC):",
+    articleTableTitle: "Berat & Tinggi Badan Rata-rata Anak (Persentil ke-50)",
+    articleColAge: "Usia",
+    articleColBoys: "Laki-laki",
+    articleColGirls: "Perempuan",
+    articleFactorsTitle: "Faktor yang Mempengaruhi Pertumbuhan Anak",
+    articleFactors: [
+      "Genetik — tinggi dan berat badan orang tua adalah prediktor terkuat pertumbuhan anak.",
+      "Nutrisi — asupan protein, kalsium, zat besi, dan vitamin D sangat kritis di masa pertumbuhan.",
+      "Aktivitas fisik — anak aktif cenderung memiliki komposisi tubuh lebih baik (lebih banyak otot, lebih sedikit lemak).",
+      "Tidur — hormon pertumbuhan (GH) diproduksi terutama saat tidur nyenyak. Anak 6–12 tahun butuh 9–12 jam tidur.",
+      "Kondisi kesehatan — penyakit kronis atau infeksi berulang bisa menghambat pertumbuhan.",
+    ],
+    articleNoteTitle: "Kapan Harus ke Dokter?",
+    articleNoteBody: "Konsultasi ke dokter anak jika berat badan anak tiba-tiba turun signifikan, berada di bawah persentil ke-5 atau di atas persentil ke-95 secara konsisten, atau kurva pertumbuhannya tidak stabil dari waktu ke waktu.",
     footer: "© 2026 Kauna Healthy · Informasi ini bukan pengganti saran medis profesional.",
   },
   en: {
@@ -59,8 +76,46 @@ const content = {
     faq3Q: "Does the 50th percentile mean most ideal?",
     faq3A:
       "Not necessarily. A healthy child can be anywhere between the 5th and 85th percentile. What matters most is consistent growth over time — whether the growth curve is stable.",
+    articleTitle: "Ideal Child Weight by Age",
+    articleP1: "Child growth is not linear — there are rapid growth spurts and slower periods, both of which are normal. What matters most is not the number on the scale, but the consistency of the growth curve over time.",
+    articleP2: "Here are average weight and height ranges for children based on age (WHO/CDC reference):",
+    articleTableTitle: "Average Child Weight & Height (50th Percentile)",
+    articleColAge: "Age",
+    articleColBoys: "Boys",
+    articleColGirls: "Girls",
+    articleFactorsTitle: "Factors That Affect Child Growth",
+    articleFactors: [
+      "Genetics — the height and weight of parents is the strongest predictor of a child's growth.",
+      "Nutrition — adequate protein, calcium, iron, and vitamin D are critical during growth phases.",
+      "Physical activity — active children tend to have better body composition (more muscle, less fat).",
+      "Sleep — growth hormone (GH) is produced mainly during deep sleep. Children aged 6–12 need 9–12 hours of sleep.",
+      "Health conditions — chronic illness or recurring infections can slow growth.",
+    ],
+    articleNoteTitle: "When to See a Doctor",
+    articleNoteBody: "Consult a pediatrician if your child suddenly loses significant weight, consistently falls below the 5th or above the 95th percentile, or if the growth curve is unstable over time.",
     footer: "© 2026 Kauna Healthy · This information is not a substitute for professional medical advice.",
   },
+};
+
+const anakTable = {
+  id: [
+    { age: "2 tahun", boys: "12–14 kg / 86–90 cm", girls: "11–14 kg / 85–89 cm" },
+    { age: "4 tahun", boys: "15–18 kg / 100–105 cm", girls: "15–18 kg / 99–104 cm" },
+    { age: "6 tahun", boys: "19–22 kg / 112–117 cm", girls: "18–22 kg / 111–116 cm" },
+    { age: "8 tahun", boys: "24–28 kg / 122–128 cm", girls: "23–28 kg / 121–128 cm" },
+    { age: "10 tahun", boys: "30–36 kg / 132–139 cm", girls: "30–37 kg / 132–140 cm" },
+    { age: "12 tahun", boys: "37–45 kg / 142–152 cm", girls: "37–46 kg / 144–154 cm" },
+    { age: "14 tahun", boys: "47–57 kg / 155–166 cm", girls: "44–52 kg / 154–162 cm" },
+  ],
+  en: [
+    { age: "2 years", boys: "12–14 kg / 86–90 cm", girls: "11–14 kg / 85–89 cm" },
+    { age: "4 years", boys: "15–18 kg / 100–105 cm", girls: "15–18 kg / 99–104 cm" },
+    { age: "6 years", boys: "19–22 kg / 112–117 cm", girls: "18–22 kg / 111–116 cm" },
+    { age: "8 years", boys: "24–28 kg / 122–128 cm", girls: "23–28 kg / 121–128 cm" },
+    { age: "10 years", boys: "30–36 kg / 132–139 cm", girls: "30–37 kg / 132–140 cm" },
+    { age: "12 years", boys: "37–45 kg / 142–152 cm", girls: "37–46 kg / 144–154 cm" },
+    { age: "14 years", boys: "47–57 kg / 155–166 cm", girls: "44–52 kg / 154–162 cm" },
+  ],
 };
 
 export default function AnakClient() {
@@ -120,6 +175,51 @@ export default function AnakClient() {
                 <p className="text-sm leading-relaxed text-gray-600">{item.a}</p>
               </div>
             ))}
+          </div>
+        </section>
+      </article>
+
+      <article id="berat-badan-anak-artikel" className="mt-10 space-y-6 text-emerald-950/80">
+        <section>
+          <h2 className="text-xl font-bold text-emerald-900 mb-3">{tx.articleTitle}</h2>
+          <p className="leading-relaxed text-sm sm:text-base mb-3">{tx.articleP1}</p>
+          <p className="leading-relaxed text-sm sm:text-base mb-4">{tx.articleP2}</p>
+
+          <h3 className="text-base font-semibold text-emerald-800 mb-3">{tx.articleTableTitle}</h3>
+          <div className="overflow-x-auto rounded-2xl border border-emerald-100 shadow-sm mb-6">
+            <table className="w-full text-sm">
+              <thead className="bg-emerald-50">
+                <tr>
+                  <th className="text-left px-4 py-3 font-semibold text-emerald-700">{tx.articleColAge}</th>
+                  <th className="text-left px-4 py-3 font-semibold text-emerald-700">{tx.articleColBoys}</th>
+                  <th className="text-left px-4 py-3 font-semibold text-emerald-700">{tx.articleColGirls}</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-emerald-50">
+                {anakTable[lang].map((row, i) => (
+                  <tr key={i} className="bg-white hover:bg-emerald-50/40 transition-colors">
+                    <td className="px-4 py-3 font-medium text-gray-700">{row.age}</td>
+                    <td className="px-4 py-3 text-sm text-blue-600">{row.boys}</td>
+                    <td className="px-4 py-3 text-sm text-pink-600">{row.girls}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <h3 className="text-base font-semibold text-emerald-800 mb-3">{tx.articleFactorsTitle}</h3>
+          <div className="space-y-2 mb-5">
+            {tx.articleFactors.map((factor, i) => (
+              <div key={i} className="flex gap-3 items-start rounded-2xl bg-emerald-50 border border-emerald-100 p-4">
+                <span className="text-emerald-500 font-black text-base mt-0.5 shrink-0">{i + 1}.</span>
+                <p className="text-sm leading-relaxed text-gray-600">{factor}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="rounded-2xl bg-amber-50 border border-amber-200 p-4">
+            <p className="font-semibold text-amber-800 mb-1 text-sm">{tx.articleNoteTitle}</p>
+            <p className="text-sm leading-relaxed text-amber-700/80">{tx.articleNoteBody}</p>
           </div>
         </section>
       </article>

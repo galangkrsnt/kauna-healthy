@@ -35,6 +35,19 @@ const content = {
     faq3Q: "Apa itu defisit kalori?",
     faq3A:
       "Defisit kalori terjadi ketika kamu makan lebih sedikit dari TDEE-mu. Defisit 500 kcal/hari setara dengan penurunan sekitar 0.5 kg per minggu.",
+    articleTitle: "Berapa Kalori yang Dibutuhkan Tubuh Per Hari?",
+    articleP1: "Kebutuhan kalori harian setiap orang berbeda-beda. Faktor utamanya adalah usia, jenis kelamin, berat badan, tinggi badan, dan seberapa aktif kamu bergerak. Tidak ada angka tunggal yang berlaku untuk semua orang.",
+    articleP2: "Sebagai referensi umum, berikut kisaran kebutuhan kalori harian berdasarkan tingkat aktivitas:",
+    articleTableTitle: "Kisaran Kalori Harian (Estimasi Umum)",
+    articleColActivity: "Tingkat Aktivitas",
+    articleColWomen: "Wanita",
+    articleColMen: "Pria",
+    articleMenTitle: "Kebutuhan Kalori Pria Dewasa",
+    articleMenBody: "Pria dewasa usia 19–50 tahun dengan aktivitas sedang membutuhkan sekitar 2.400–2.800 kcal per hari. Pria yang lebih aktif atau berbadan besar bisa membutuhkan lebih dari 3.000 kcal.",
+    articleWomenTitle: "Kebutuhan Kalori Wanita Dewasa",
+    articleWomenBody: "Wanita dewasa usia 19–50 tahun dengan aktivitas sedang membutuhkan sekitar 1.800–2.200 kcal per hari. Kebutuhan meningkat saat hamil (+340 kcal) dan menyusui (+500 kcal).",
+    articleNoteTitle: "Ingat",
+    articleNoteBody: "Angka-angka ini adalah estimasi. Metabolisme setiap orang unik. Gunakan kalkulator TDEE di atas sebagai titik awal, lalu sesuaikan berdasarkan perubahan berat badan aktual setelah 2–3 minggu.",
     footer:
       "© 2026 Kauna Healthy · Informasi ini bukan pengganti saran medis profesional.",
   },
@@ -68,9 +81,37 @@ const content = {
     faq3Q: "What is a calorie deficit?",
     faq3A:
       "A calorie deficit occurs when you eat less than your TDEE. A 500 kcal/day deficit equals roughly 0.5 kg of weight loss per week.",
+    articleTitle: "How Many Calories Does Your Body Need Per Day?",
+    articleP1: "Daily calorie needs vary from person to person. The main factors are age, gender, body weight, height, and how active you are. There's no single number that works for everyone.",
+    articleP2: "As a general reference, here are estimated daily calorie ranges by activity level:",
+    articleTableTitle: "Daily Calorie Ranges (General Estimate)",
+    articleColActivity: "Activity Level",
+    articleColWomen: "Women",
+    articleColMen: "Men",
+    articleMenTitle: "Calorie Needs for Adult Men",
+    articleMenBody: "Adult men aged 19–50 with moderate activity need approximately 2,400–2,800 kcal per day. More active men or those with larger body frames may need over 3,000 kcal.",
+    articleWomenTitle: "Calorie Needs for Adult Women",
+    articleWomenBody: "Adult women aged 19–50 with moderate activity need approximately 1,800–2,200 kcal per day. Needs increase during pregnancy (+340 kcal) and breastfeeding (+500 kcal).",
+    articleNoteTitle: "Keep in Mind",
+    articleNoteBody: "These are estimates. Everyone's metabolism is unique. Use the TDEE calculator above as a starting point, then adjust based on your actual weight changes after 2–3 weeks.",
     footer:
       "© 2026 Kauna Healthy · This information is not a substitute for professional medical advice.",
   },
+};
+
+const kaloriTable = {
+  id: [
+    { activity: "Tidak aktif (kerja duduk, jarang olahraga)", women: "1.600–2.000", men: "2.000–2.600" },
+    { activity: "Aktif ringan (olahraga 1–3x/minggu)", women: "1.800–2.200", men: "2.200–2.800" },
+    { activity: "Aktif sedang (olahraga 3–5x/minggu)", women: "2.000–2.400", men: "2.400–3.000" },
+    { activity: "Sangat aktif (olahraga intensif setiap hari)", women: "2.200–2.800", men: "2.800–3.500" },
+  ],
+  en: [
+    { activity: "Sedentary (desk job, rarely exercises)", women: "1,600–2,000", men: "2,000–2,600" },
+    { activity: "Lightly active (exercise 1–3x/week)", women: "1,800–2,200", men: "2,200–2,800" },
+    { activity: "Moderately active (exercise 3–5x/week)", women: "2,000–2,400", men: "2,400–3,000" },
+    { activity: "Very active (intense exercise daily)", women: "2,200–2,800", men: "2,800–3,500" },
+  ],
 };
 
 export default function KaloriClient() {
@@ -144,6 +185,52 @@ export default function KaloriClient() {
                 <p className="text-sm leading-relaxed text-gray-600">{item.a}</p>
               </div>
             ))}
+          </div>
+        </section>
+      </article>
+
+      <article id="kalori-harian-artikel" className="mt-10 space-y-6 text-emerald-950/80">
+        <section>
+          <h2 className="text-xl font-bold text-emerald-900 mb-3">{tx.articleTitle}</h2>
+          <p className="leading-relaxed text-sm sm:text-base mb-3">{tx.articleP1}</p>
+          <p className="leading-relaxed text-sm sm:text-base mb-4">{tx.articleP2}</p>
+
+          <h3 className="text-base font-semibold text-emerald-800 mb-3">{tx.articleTableTitle}</h3>
+          <div className="overflow-x-auto rounded-2xl border border-emerald-100 shadow-sm mb-6">
+            <table className="w-full text-sm">
+              <thead className="bg-emerald-50">
+                <tr>
+                  <th className="text-left px-4 py-3 font-semibold text-emerald-700">{tx.articleColActivity}</th>
+                  <th className="text-left px-4 py-3 font-semibold text-emerald-700">{tx.articleColWomen}</th>
+                  <th className="text-left px-4 py-3 font-semibold text-emerald-700">{tx.articleColMen}</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-emerald-50">
+                {kaloriTable[lang].map((row, i) => (
+                  <tr key={i} className="bg-white hover:bg-emerald-50/40 transition-colors">
+                    <td className="px-4 py-3 text-gray-700">{row.activity}</td>
+                    <td className="px-4 py-3 font-mono text-pink-600">{row.women}</td>
+                    <td className="px-4 py-3 font-mono text-blue-600">{row.men}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="space-y-4">
+            <div>
+              <h3 className="text-base font-semibold text-emerald-800 mb-1">{tx.articleMenTitle}</h3>
+              <p className="text-sm leading-relaxed text-gray-600">{tx.articleMenBody}</p>
+            </div>
+            <div>
+              <h3 className="text-base font-semibold text-emerald-800 mb-1">{tx.articleWomenTitle}</h3>
+              <p className="text-sm leading-relaxed text-gray-600">{tx.articleWomenBody}</p>
+            </div>
+          </div>
+
+          <div className="mt-5 rounded-2xl bg-amber-50 border border-amber-200 p-4">
+            <p className="font-semibold text-amber-800 mb-1 text-sm">{tx.articleNoteTitle}</p>
+            <p className="text-sm leading-relaxed text-amber-700/80">{tx.articleNoteBody}</p>
           </div>
         </section>
       </article>
