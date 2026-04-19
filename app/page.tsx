@@ -1,4 +1,9 @@
+import type { Metadata } from "next";
 import HomeClient from "./components/HomeClient";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "https://healthy.getkauna.com" },
+};
 
 const schemaMarkup = {
   "@context": "https://schema.org",
