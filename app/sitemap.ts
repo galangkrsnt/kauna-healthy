@@ -38,5 +38,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9,
     },
+    {
+      url: "https://healthy.getkauna.com/tentang",
+      lastModified: new Date("2026-04-20"),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: "https://healthy.getkauna.com/kebijakan-privasi",
+      lastModified: new Date("2026-04-20"),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: "https://healthy.getkauna.com/kontak",
+      lastModified: new Date("2026-04-20"),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
   ];
 }

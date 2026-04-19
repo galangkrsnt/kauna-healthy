@@ -164,7 +164,7 @@ export default function Sidebar({ lang, onToggleLang }: Props) {
           </nav>
 
           {/* Lang toggle */}
-          <div className="px-4 py-4 border-t border-emerald-100">
+          <div className="px-4 pt-4 border-t border-emerald-100">
             <button
               onClick={onToggleLang}
               className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-xl border border-emerald-200 bg-white text-sm font-medium text-emerald-700 hover:bg-emerald-50 transition-all shadow-sm"
@@ -177,6 +177,21 @@ export default function Sidebar({ lang, onToggleLang }: Props) {
               <span className="text-emerald-400">⇄</span>
               <span>{lang === "id" ? "EN" : "ID"}</span>
             </button>
+          </div>
+
+          {/* Footer links */}
+          <div className="px-4 py-3 flex justify-center gap-3 flex-wrap">
+            <Link href="/tentang" onClick={() => setMobileOpen(false)} className="text-xs text-emerald-400 hover:text-emerald-600 transition-colors">
+              {lang === "id" ? "Tentang" : "About"}
+            </Link>
+            <span className="text-emerald-200 text-xs">·</span>
+            <Link href="/kebijakan-privasi" onClick={() => setMobileOpen(false)} className="text-xs text-emerald-400 hover:text-emerald-600 transition-colors">
+              {lang === "id" ? "Privasi" : "Privacy"}
+            </Link>
+            <span className="text-emerald-200 text-xs">·</span>
+            <Link href="/kontak" onClick={() => setMobileOpen(false)} className="text-xs text-emerald-400 hover:text-emerald-600 transition-colors">
+              {lang === "id" ? "Kontak" : "Contact"}
+            </Link>
           </div>
         </div>
       </aside>
