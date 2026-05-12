@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const navLinks = [
   { href: "/", label: { id: "Kalkulator BMI", en: "BMI Calculator" } },
@@ -40,6 +40,19 @@ export default function ArticleLayout({
   activeHref: string;
 }) {
   const [lang, setLang] = useState<"id" | "en">("id");
+
+  // Persist lang preference across article navigations
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    const saved = localStorage.getItem("article-lang");
+    if (saved === "en") setLang("en");
+  }, []);
+
+  const toggleLang = () => {
+    const next = lang === "id" ? "en" : "id";
+    setLang(next);
+    localStorage.setItem("article-lang", next);
+  };
 
   const content = childrenId
     ? lang === "id"
@@ -101,7 +114,7 @@ export default function ArticleLayout({
         {/* Lang toggle */}
         <div className="pt-3 border-t border-emerald-50">
           <button
-            onClick={() => setLang((l) => (l === "id" ? "en" : "id"))}
+            onClick={toggleLang}
             className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-xl border border-emerald-200 bg-white text-sm font-medium text-emerald-700 hover:bg-emerald-50 transition-all shadow-sm mb-2"
           >
             <span className="text-base leading-none">{lang === "id" ? "🇮🇩" : "🇬🇧"}</span>
@@ -132,7 +145,7 @@ export default function ArticleLayout({
         <span className="text-emerald-200">·</span>
         <span className="text-sm text-emerald-600 font-medium">{lang === "id" ? "Artikel" : "Articles"}</span>
         <button
-          onClick={() => setLang((l) => (l === "id" ? "en" : "id"))}
+          onClick={toggleLang}
           className="ml-auto text-xs border border-emerald-200 rounded-lg px-2 py-1 text-emerald-700 font-semibold hover:bg-emerald-50"
         >
           {lang === "id" ? "EN" : "ID"}
