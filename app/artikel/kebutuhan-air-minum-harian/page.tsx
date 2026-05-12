@@ -20,9 +20,9 @@ const schema = {
   publisher: { "@type": "Organization", name: "Kauna Healthy", url: "https://healthy.getkauna.com" },
 };
 
-export default function ArticleAir() {
+function ContentId() {
   return (
-    <ArticleLayout activeHref="/artikel/kebutuhan-air-minum-harian">
+    <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       <header className="mb-8">
@@ -176,6 +176,174 @@ export default function ArticleAir() {
         </div>
 
       </div>
-    </ArticleLayout>
+    </>
+  );
+}
+
+function ContentEn() {
+  return (
+    <>
+      <header className="mb-8">
+        <span className="inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full bg-cyan-100 text-cyan-700 mb-3">Hydration</span>
+        <h1 className="text-3xl font-bold text-emerald-900 leading-tight mb-3">
+          Daily Water Intake: A Complete Guide
+        </h1>
+        <p className="text-emerald-700/70 text-base leading-relaxed">
+          More than just &quot;8 glasses a day&quot; — everyone&apos;s water needs are different and influenced by many factors.
+        </p>
+      </header>
+
+      <div className="space-y-8 text-emerald-950/80">
+
+        <section>
+          <h2 className="text-xl font-bold text-emerald-900 mb-3">Why is Water So Important for Your Body?</h2>
+          <p className="leading-relaxed text-sm sm:text-base mb-3">
+            The human body is made up of approximately 60% water. Water is not just a drink — it is the primary medium for all the biological processes that keep you alive and healthy.
+          </p>
+          <div className="space-y-2">
+            {[
+              "Regulates body temperature through sweating and respiration",
+              "Transports nutrients and oxygen to every cell in the body",
+              "Assists in flushing toxins through urine, sweat, and breathing",
+              "Protects joints and vital organs as a natural cushion",
+              "Supports cognitive function — even mild dehydration (1–2%) reduces concentration and mood",
+            ].map((point, i) => (
+              <div key={i} className="flex gap-3 items-start rounded-2xl bg-cyan-50 border border-cyan-100 p-3">
+                <span className="text-cyan-500 font-bold text-sm mt-0.5 shrink-0">✓</span>
+                <p className="text-sm text-gray-600 leading-relaxed">{point}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-emerald-900 mb-3">How Much Water Should You Drink Per Day?</h2>
+          <p className="leading-relaxed text-sm sm:text-base mb-3">
+            The popular recommendation of &quot;8 glasses a day&quot; (about 2 liters) actually lacks strong scientific backing for all individuals. A more accurate estimate is based on body weight: <strong>35 ml per kilogram of body weight</strong> as a baseline for adults with normal activity levels.
+          </p>
+          <div className="rounded-2xl bg-emerald-50 border border-emerald-100 p-4 font-mono text-center text-emerald-800 text-sm sm:text-base mb-4">
+            Water Intake = Body Weight (kg) × 35 ml
+          </div>
+          <p className="leading-relaxed text-sm sm:text-base mb-3">
+            Example: a person weighing 60 kg needs approximately 2,100 ml or 2.1 liters per day under normal conditions. This number increases significantly if you exercise regularly or live in a hot environment.
+          </p>
+          <div className="overflow-x-auto rounded-2xl border border-emerald-100 shadow-sm">
+            <table className="w-full text-sm">
+              <thead className="bg-emerald-50">
+                <tr>
+                  <th className="text-left px-4 py-3 font-semibold text-emerald-700">Body Weight</th>
+                  <th className="text-left px-4 py-3 font-semibold text-emerald-700">Baseline Intake</th>
+                  <th className="text-left px-4 py-3 font-semibold text-emerald-700">Equivalent Glasses (250ml)</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-emerald-50">
+                {[
+                  { weight: "45 kg", need: "1,575 ml", glass: "~6 glasses" },
+                  { weight: "55 kg", need: "1,925 ml", glass: "~8 glasses" },
+                  { weight: "65 kg", need: "2,275 ml", glass: "~9 glasses" },
+                  { weight: "75 kg", need: "2,625 ml", glass: "~10 glasses" },
+                  { weight: "85 kg", need: "2,975 ml", glass: "~12 glasses" },
+                ].map((row) => (
+                  <tr key={row.weight} className="bg-white hover:bg-emerald-50/40 transition-colors">
+                    <td className="px-4 py-3 font-semibold text-gray-700">{row.weight}</td>
+                    <td className="px-4 py-3 font-mono text-cyan-600">{row.need}</td>
+                    <td className="px-4 py-3 text-gray-500">{row.glass}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-emerald-900 mb-4">Factors That Increase Your Hydration Needs</h2>
+          <div className="space-y-3">
+            {[
+              { factor: "Exercise", detail: "Add 400–600 ml for every hour of moderate-intensity exercise. For intense workouts or long-distance running, needs can exceed 1 liter per hour." },
+              { factor: "Hot and humid weather", detail: "Living in a tropical climate like Indonesia increases fluid needs because the body sweats more. On very hot days, add 500 ml above your baseline." },
+              { factor: "Fever, vomiting, or diarrhea", detail: "These conditions cause significant fluid loss. Water needs may double or more — consult a doctor if the condition is severe." },
+              { factor: "Pregnancy and breastfeeding", detail: "Pregnant women need an additional ~300 ml per day. Breastfeeding mothers need an extra ~700–900 ml since breast milk is largely water." },
+              { factor: "Caffeine and alcohol consumption", detail: "Coffee and tea have a mild diuretic effect. For every cup of coffee, add about 150 ml of extra water." },
+            ].map((item) => (
+              <div key={item.factor} className="border-l-4 border-cyan-300 pl-4">
+                <p className="font-semibold text-emerald-900 text-sm mb-1">{item.factor}</p>
+                <p className="text-sm text-gray-600 leading-relaxed">{item.detail}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-emerald-900 mb-4">Dehydration Signs That Are Often Ignored</h2>
+          <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+            Thirst is actually a late sign of dehydration — by the time you feel thirsty, your body is already 1–2% short on fluids. Watch for these earlier signals:
+          </p>
+          <div className="space-y-2">
+            {[
+              { sign: "Dark yellow or orange urine", severity: "⚠ Warning" },
+              { sign: "Mild headache without an obvious cause", severity: "⚠ Warning" },
+              { sign: "Difficulty concentrating or feeling fatigued", severity: "⚠ Warning" },
+              { sign: "Dry mouth and lips", severity: "⚠ Warning" },
+              { sign: "Infrequent urination (less than 4 times a day)", severity: "🔴 Drink now" },
+              { sign: "Dizziness when standing up", severity: "🔴 Drink now" },
+              { sign: "No sweating despite being in a hot environment", severity: "🚨 See a doctor" },
+            ].map((item) => (
+              <div key={item.sign} className="flex items-center justify-between gap-3 bg-red-50 border border-red-100 rounded-xl px-4 py-2.5">
+                <p className="text-sm text-gray-700">{item.sign}</p>
+                <span className="text-xs font-semibold text-red-500 shrink-0">{item.severity}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-emerald-900 mb-4">Practical Tips to Drink More Water</h2>
+          <div className="space-y-2">
+            {[
+              "Carry a 500–750 ml water bottle everywhere and aim to finish it at least 3–4 times a day.",
+              "Drink a large glass of water immediately after waking up — your body has gone 6–8 hours without fluids.",
+              "Set a reminder alarm on your phone every 1–2 hours as a drinking prompt.",
+              "Eat fruits and vegetables with high water content: watermelon (92%), cucumber (95%), tomato (94%), strawberry (91%).",
+              "Use urine color as your guide: pale yellow like lemonade = well hydrated. Dark yellow = drink more.",
+              "Do not wait until you are thirsty — drink regularly even when you do not feel thirsty.",
+            ].map((tip, i) => (
+              <div key={i} className="flex gap-3 items-start rounded-2xl bg-gray-50 border border-gray-100 p-3">
+                <span className="text-cyan-500 font-bold text-sm mt-0.5 shrink-0">{i + 1}.</span>
+                <p className="text-sm text-gray-600 leading-relaxed">{tip}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <div className="rounded-2xl bg-amber-50 border border-amber-200 p-5">
+          <p className="font-semibold text-amber-800 mb-2 text-sm">Medical Disclaimer</p>
+          <p className="text-sm leading-relaxed text-amber-700/80">
+            This article is for educational purposes only. Fluid needs may differ with certain medical conditions such as kidney disease, heart failure, or diabetes. Consult your doctor for personalized recommendations.
+          </p>
+        </div>
+
+        <div className="rounded-2xl bg-emerald-600 p-5 text-center">
+          <p className="text-white font-semibold mb-1 text-sm">Calculate your daily water needs</p>
+          <p className="text-emerald-100 text-xs mb-3">Based on your weight, activity level, and specific conditions</p>
+          <Link
+            href="/air"
+            className="inline-block bg-white text-emerald-700 font-semibold text-sm px-6 py-2.5 rounded-xl hover:bg-emerald-50 transition-colors"
+          >
+            Water Intake Calculator →
+          </Link>
+        </div>
+
+      </div>
+    </>
+  );
+}
+
+export default function ArticleAir() {
+  return (
+    <ArticleLayout
+      activeHref="/artikel/kebutuhan-air-minum-harian"
+      childrenId={<ContentId />}
+      childrenEn={<ContentEn />}
+    />
   );
 }

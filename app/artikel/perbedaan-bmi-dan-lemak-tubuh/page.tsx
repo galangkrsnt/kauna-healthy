@@ -20,9 +20,9 @@ const schema = {
   publisher: { "@type": "Organization", name: "Kauna Healthy", url: "https://healthy.getkauna.com" },
 };
 
-export default function ArticleBMIvsLemak() {
+function ContentId() {
   return (
-    <ArticleLayout activeHref="/artikel/perbedaan-bmi-dan-lemak-tubuh">
+    <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       <header className="mb-8">
@@ -164,6 +164,179 @@ export default function ArticleBMIvsLemak() {
         </div>
 
       </div>
-    </ArticleLayout>
+    </>
+  );
+}
+
+function ContentEn() {
+  return (
+    <>
+      <header className="mb-8">
+        <span className="inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-700 mb-3">Body Analysis</span>
+        <h1 className="text-3xl font-bold text-emerald-900 leading-tight mb-3">
+          BMI vs Body Fat Percentage: Which One Is More Accurate?
+        </h1>
+        <p className="text-emerald-700/70 text-base leading-relaxed">
+          A normal BMI does not guarantee a healthy body. A high body fat percentage does not always mean you should panic. Understand what each metric actually measures first.
+        </p>
+      </header>
+
+      <div className="space-y-8 text-emerald-950/80">
+
+        <section>
+          <h2 className="text-xl font-bold text-emerald-900 mb-3">What Does Each Metric Measure?</h2>
+          <div className="space-y-3 mb-4">
+            <div className="rounded-2xl bg-blue-50 border border-blue-100 p-4">
+              <p className="font-semibold text-blue-800 text-sm mb-1">BMI (Body Mass Index)</p>
+              <p className="text-sm text-gray-600 leading-relaxed">BMI is calculated from your weight and height (kg/m²). It estimates whether your weight is proportional to your height — nothing more. It does not distinguish between muscle and fat, bone density, or where fat is stored in your body.</p>
+            </div>
+            <div className="rounded-2xl bg-emerald-50 border border-emerald-100 p-4">
+              <p className="font-semibold text-emerald-800 text-sm mb-1">Body Fat Percentage</p>
+              <p className="text-sm text-gray-600 leading-relaxed">Body fat percentage measures how much of your total body weight is fat tissue. This gives a much clearer picture of your actual body composition — how much is muscle, bone, water, and fat.</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-emerald-900 mb-4">Quick Comparison: BMI vs Body Fat %</h2>
+          <div className="overflow-x-auto rounded-2xl border border-emerald-100 shadow-sm mb-4">
+            <table className="w-full text-sm">
+              <thead className="bg-emerald-50">
+                <tr>
+                  <th className="text-left px-4 py-3 font-semibold text-emerald-700">Aspect</th>
+                  <th className="text-left px-4 py-3 font-semibold text-emerald-700">BMI</th>
+                  <th className="text-left px-4 py-3 font-semibold text-emerald-700">Body Fat %</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-emerald-50 text-xs sm:text-sm">
+                {[
+                  { aspect: "What it measures", bmi: "Weight vs height ratio", fat: "Fat proportion of total body weight" },
+                  { aspect: "Tools required", bmi: "Scale + measuring tape", fat: "BIA device, DEXA scan, or formula" },
+                  { aspect: "Cost", bmi: "Free", fat: "Free (formula) to expensive (DEXA)" },
+                  { aspect: "Accuracy", bmi: "Moderate", fat: "High (DEXA) to moderate (formula)" },
+                  { aspect: "Distinguishes muscle vs fat", bmi: "No", fat: "Yes" },
+                  { aspect: "Reliable for athletes", bmi: "Not accurate", fat: "More accurate" },
+                  { aspect: "Suitable for mass screening", bmi: "Yes", fat: "Not practical" },
+                ].map((row) => (
+                  <tr key={row.aspect} className="bg-white hover:bg-emerald-50/40 transition-colors">
+                    <td className="px-4 py-3 font-medium text-gray-700">{row.aspect}</td>
+                    <td className="px-4 py-3 text-gray-600">{row.bmi}</td>
+                    <td className="px-4 py-3 text-gray-600">{row.fat}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-emerald-900 mb-3">When Can BMI Be Misleading?</h2>
+          <p className="leading-relaxed text-sm sm:text-base mb-4">There are several situations where BMI gives an inaccurate picture:</p>
+          <div className="space-y-3">
+            {[
+              {
+                title: "Athletes and muscular individuals",
+                body: "Muscle is significantly denser and heavier than fat at the same volume. A bodybuilder or strength athlete can have a BMI of 28–30 (classified as overweight or obese) while carrying only 8–12% body fat — far healthier than the average person at a \"normal\" BMI.",
+                icon: "💪",
+              },
+              {
+                title: "The 'Skinny Fat' phenomenon",
+                body: "Someone with a normal BMI (18.5–22.9) can have a high body fat percentage because they carry very little muscle mass. Clinically known as MONW (Metabolically Obese Normal Weight) — their risk for diabetes and heart disease is comparable to someone classified as obese.",
+                icon: "⚠",
+              },
+              {
+                title: "Older adults",
+                body: "As people age, muscle mass naturally declines (sarcopenia) and is gradually replaced by fat. BMI may remain normal, but the body composition has shifted to an unhealthy state. This is why many older adults with a normal BMI still carry significant metabolic risk.",
+                icon: "👴",
+              },
+              {
+                title: "Racial and ethnic differences",
+                body: "Asian populations — including Indonesians — tend to carry more body fat at the same BMI compared to Caucasian populations. Standard global BMI cutoffs, which were developed based on European populations, do not fully account for this difference.",
+                icon: "🌏",
+              },
+            ].map((item) => (
+              <div key={item.title} className="rounded-2xl bg-gray-50 border border-gray-100 p-4">
+                <div className="flex gap-3 mb-2">
+                  <span className="text-xl">{item.icon}</span>
+                  <p className="font-semibold text-emerald-800 text-sm pt-0.5">{item.title}</p>
+                </div>
+                <p className="text-sm text-gray-600 leading-relaxed">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-emerald-900 mb-3">When Is Body Fat Percentage More Useful?</h2>
+          <p className="leading-relaxed text-sm sm:text-base mb-4">Measure your body fat percentage if you:</p>
+          <div className="space-y-2">
+            {[
+              "Exercise regularly and want to track body composition, not just weight on the scale",
+              "Your BMI is at the upper end of normal but you are active and muscular",
+              "Your BMI is normal but you feel soft, low-energy, and unfit (possible skinny fat)",
+              "You are on a cutting program (reducing fat while preserving muscle mass)",
+              "You want more precise data to guide your nutrition and training plan",
+            ].map((point, i) => (
+              <div key={i} className="flex gap-3 items-start bg-blue-50 border border-blue-100 rounded-xl p-3">
+                <span className="text-blue-500 font-bold text-sm mt-0.5 shrink-0">✓</span>
+                <p className="text-sm text-gray-600 leading-relaxed">{point}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-emerald-900 mb-3">Best Approach: Use Both Together</h2>
+          <p className="leading-relaxed text-sm sm:text-base mb-3">
+            BMI and body fat percentage are not competitors — they complement each other. Use BMI as a quick, low-cost initial screening. If the result seems off (normal BMI but you feel unhealthy, or high BMI but you are very active), add a body fat measurement for more context.
+          </p>
+          <p className="leading-relaxed text-sm sm:text-base mb-4">
+            For a more complete health picture, also measure your <strong>waist circumference</strong> — visceral fat around the abdomen is the most dangerous type, and it can be detected with this simple measurement.
+          </p>
+          <div className="rounded-2xl bg-emerald-50 border border-emerald-100 p-4">
+            <p className="text-sm font-semibold text-emerald-800 mb-2">Ideal combination for health screening:</p>
+            <div className="space-y-1">
+              {[
+                "BMI — general overview of weight-to-height proportion",
+                "Waist Circumference / WHtR — detects dangerous visceral fat",
+                "Body Fat % — your true body composition",
+              ].map((item, i) => (
+                <div key={i} className="flex gap-2 text-sm text-gray-600">
+                  <span className="text-emerald-500 font-bold shrink-0">{i + 1}.</span>
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <div className="rounded-2xl bg-amber-50 border border-amber-200 p-5">
+          <p className="font-semibold text-amber-800 mb-2 text-sm">Medical Disclaimer</p>
+          <p className="text-sm leading-relaxed text-amber-700/80">
+            No single measurement tool is perfect. For a comprehensive health evaluation, consult a doctor or qualified healthcare professional who can conduct a thorough examination.
+          </p>
+        </div>
+
+        <div className="rounded-2xl bg-emerald-600 p-5 text-center">
+          <p className="text-white font-semibold mb-1 text-sm">Try all our free calculators</p>
+          <p className="text-emerald-100 text-xs mb-4">Body fat, BMI, and waist circumference — all free</p>
+          <div className="flex gap-3 justify-center flex-wrap">
+            <Link href="/lemak" className="inline-block bg-white text-emerald-700 font-semibold text-sm px-4 py-2 rounded-xl hover:bg-emerald-50 transition-colors">Body Fat Calculator →</Link>
+            <Link href="/" className="inline-block bg-emerald-500 text-white font-semibold text-sm px-4 py-2 rounded-xl hover:bg-emerald-400 transition-colors">BMI Calculator →</Link>
+          </div>
+        </div>
+
+      </div>
+    </>
+  );
+}
+
+export default function ArticleBMIvsLemak() {
+  return (
+    <ArticleLayout
+      activeHref="/artikel/perbedaan-bmi-dan-lemak-tubuh"
+      childrenId={<ContentId />}
+      childrenEn={<ContentEn />}
+    />
   );
 }

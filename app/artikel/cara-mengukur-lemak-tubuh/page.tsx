@@ -20,9 +20,9 @@ const schema = {
   publisher: { "@type": "Organization", name: "Kauna Healthy", url: "https://healthy.getkauna.com" },
 };
 
-export default function ArticleLemak() {
+function ContentId() {
   return (
-    <ArticleLayout activeHref="/artikel/cara-mengukur-lemak-tubuh">
+    <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       <header className="mb-8">
@@ -196,6 +196,194 @@ export default function ArticleLemak() {
         </div>
 
       </div>
-    </ArticleLayout>
+    </>
+  );
+}
+
+function ContentEn() {
+  return (
+    <>
+      <header className="mb-8">
+        <span className="inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full bg-purple-100 text-purple-700 mb-3">Body Fat</span>
+        <h1 className="text-3xl font-bold text-emerald-900 leading-tight mb-3">
+          How to Accurately Measure Body Fat Percentage
+        </h1>
+        <p className="text-emerald-700/70 text-base leading-relaxed">
+          Your weight can be deceiving. Two people with the same weight can have vastly different body compositions — and very different body fat percentages.
+        </p>
+      </header>
+
+      <div className="space-y-8 text-emerald-950/80">
+
+        <section>
+          <h2 className="text-xl font-bold text-emerald-900 mb-3">Why Body Fat % Matters More Than Weight Alone</h2>
+          <p className="leading-relaxed text-sm sm:text-base mb-3">
+            A scale only measures the force of gravity on your body — it cannot distinguish between 30 kg of muscle and 30 kg of fat. Body fat percentage gives you a far more accurate picture of your body composition and overall health status.
+          </p>
+          <p className="leading-relaxed text-sm sm:text-base mb-3">
+            Body fat falls into two main categories:
+          </p>
+          <div className="space-y-3">
+            <div className="rounded-2xl bg-emerald-50 border border-emerald-100 p-4">
+              <p className="font-semibold text-emerald-800 text-sm mb-1">Essential fat</p>
+              <p className="text-sm text-gray-600 leading-relaxed">Fat that the body needs for vital functions — organ protection, hormone production, reproductive function, and temperature regulation. Men need a minimum of 2–5%, while women need 10–13% due to higher reproductive demands.</p>
+            </div>
+            <div className="rounded-2xl bg-red-50 border border-red-100 p-4">
+              <p className="font-semibold text-red-800 text-sm mb-1">Storage fat</p>
+              <p className="text-sm text-gray-600 leading-relaxed">Fat stored as energy reserves. In moderate amounts it is not harmful, but excess storage fat — especially visceral fat around abdominal organs — directly correlates with an increased risk of chronic diseases.</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-emerald-900 mb-4">Body Fat Measurement Methods</h2>
+          <div className="space-y-3">
+            {[
+              {
+                name: "DEXA Scan",
+                accuracy: "Highly Accurate",
+                badge: "bg-emerald-100 text-emerald-700",
+                desc: "Dual-energy X-ray absorptiometry — the gold standard for body composition measurement. Can differentiate fat, muscle, and bone in each body region. Expensive and only available at select medical facilities.",
+              },
+              {
+                name: "BIA (Bioelectrical Impedance Analysis)",
+                accuracy: "Fairly Accurate",
+                badge: "bg-blue-100 text-blue-700",
+                desc: "Sends a small electrical current through the body. Available in modern smart scales and at gyms or clinics. Accuracy is affected by hydration levels — measure at the same time of day and under consistent conditions.",
+              },
+              {
+                name: "Skinfold Calipers",
+                accuracy: "Moderate",
+                badge: "bg-yellow-100 text-yellow-700",
+                desc: "Measures skin fold thickness at specific body sites using a pinch tool. Affordable and portable, but highly dependent on the skill of the person performing the measurement. Errors can be significant without proper technique.",
+              },
+              {
+                name: "Formula (e.g. Deurenberg)",
+                accuracy: "Estimate",
+                badge: "bg-gray-100 text-gray-700",
+                desc: "Calculates body fat percentage based on BMI, age, and sex. No special equipment needed. Lower accuracy, but sufficient for general estimation — the method used by Kauna Healthy's calculator.",
+              },
+            ].map((item) => (
+              <div key={item.name} className="rounded-2xl bg-gray-50 border border-gray-100 p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <p className="font-semibold text-emerald-800 text-sm">{item.name}</p>
+                  <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${item.badge}`}>{item.accuracy}</span>
+                </div>
+                <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-emerald-900 mb-4">Normal Body Fat % Ranges by Sex</h2>
+          <p className="text-sm text-gray-500 mb-4">Based on the American Council on Exercise (ACE):</p>
+          <div className="overflow-x-auto rounded-2xl border border-emerald-100 shadow-sm mb-3">
+            <table className="w-full text-sm">
+              <thead className="bg-emerald-50">
+                <tr>
+                  <th className="text-left px-4 py-3 font-semibold text-emerald-700">Category</th>
+                  <th className="text-left px-4 py-3 font-semibold text-emerald-700">Men</th>
+                  <th className="text-left px-4 py-3 font-semibold text-emerald-700">Women</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-emerald-50">
+                {[
+                  { cat: "Essential Fat", men: "2–5%", women: "10–13%", color: "text-blue-600" },
+                  { cat: "Athletes", men: "6–13%", women: "14–20%", color: "text-emerald-600" },
+                  { cat: "Fitness", men: "14–17%", women: "21–24%", color: "text-green-600" },
+                  { cat: "Average", men: "18–24%", women: "25–31%", color: "text-yellow-600" },
+                  { cat: "Obese", men: "≥ 25%", women: "≥ 32%", color: "text-red-600" },
+                ].map((row) => (
+                  <tr key={row.cat} className="bg-white hover:bg-emerald-50/40 transition-colors">
+                    <td className={`px-4 py-3 font-semibold ${row.color}`}>{row.cat}</td>
+                    <td className="px-4 py-3 font-mono text-blue-600">{row.men}</td>
+                    <td className="px-4 py-3 font-mono text-pink-600">{row.women}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-gray-400">Note: these ranges can vary by age. For individuals over 40, slightly higher body fat percentages may still fall within a healthy range.</p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-emerald-900 mb-4">How to Reduce Body Fat</h2>
+          <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+            Reducing body fat requires three components working together:
+          </p>
+          <div className="space-y-3">
+            {[
+              {
+                title: "1. Controlled calorie deficit",
+                body: "Reduce 300–500 kcal below your TDEE per day. Too large a deficit slows your metabolism and causes unwanted muscle loss. Aim to lose 0.5–1% body fat per month for sustainable progress.",
+                color: "border-blue-300",
+              },
+              {
+                title: "2. Resistance training",
+                body: "Strength training preserves muscle mass during a calorie deficit — without it, your body will burn muscle alongside fat. Aim for 2–4 sessions per week with progressive overload.",
+                color: "border-emerald-300",
+              },
+              {
+                title: "3. Adequate protein intake",
+                body: "Consume 1.6–2.2 grams of protein per kilogram of body weight per day. Protein helps preserve muscle mass, increases satiety, and has a thermogenic effect (your body burns more calories digesting it).",
+                color: "border-purple-300",
+              },
+            ].map((item) => (
+              <div key={item.title} className={`border-l-4 pl-4 ${item.color}`}>
+                <p className="font-semibold text-emerald-900 text-sm mb-1">{item.title}</p>
+                <p className="text-sm text-gray-600 leading-relaxed">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-emerald-900 mb-4">What to Avoid</h2>
+          <div className="space-y-2">
+            {[
+              "Extreme diets below 1,200 kcal/day (women) or 1,500 kcal/day (men) — they slow your metabolism and cause yo-yo weight gain.",
+              "Obsessing over the scale — body weight can increase when building muscle even as fat decreases. Track waist circumference and body fat percentage periodically too.",
+              "Excessive cardio without resistance training — this can lead to significant muscle mass loss.",
+              "Relying on fat-burner supplements without changing your diet and exercise habits.",
+            ].map((item, i) => (
+              <div key={i} className="flex gap-3 items-start rounded-2xl bg-red-50 border border-red-100 p-3">
+                <span className="text-red-400 font-bold text-sm mt-0.5 shrink-0">✗</span>
+                <p className="text-sm text-gray-600 leading-relaxed">{item}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <div className="rounded-2xl bg-amber-50 border border-amber-200 p-5">
+          <p className="font-semibold text-amber-800 mb-2 text-sm">Medical Disclaimer</p>
+          <p className="text-sm leading-relaxed text-amber-700/80">
+            This article is for educational purposes only. Very low body fat percentages (below essential levels) can be dangerous. Consult a healthcare professional before starting an aggressive fat loss program.
+          </p>
+        </div>
+
+        <div className="rounded-2xl bg-emerald-600 p-5 text-center">
+          <p className="text-white font-semibold mb-1 text-sm">Calculate your body fat percentage</p>
+          <p className="text-emerald-100 text-xs mb-3">Estimated from BMI, age, and sex</p>
+          <Link
+            href="/lemak"
+            className="inline-block bg-white text-emerald-700 font-semibold text-sm px-6 py-2.5 rounded-xl hover:bg-emerald-50 transition-colors"
+          >
+            Body Fat Calculator →
+          </Link>
+        </div>
+
+      </div>
+    </>
+  );
+}
+
+export default function ArticleLemak() {
+  return (
+    <ArticleLayout
+      activeHref="/artikel/cara-mengukur-lemak-tubuh"
+      childrenId={<ContentId />}
+      childrenEn={<ContentEn />}
+    />
   );
 }

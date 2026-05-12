@@ -20,9 +20,9 @@ const schema = {
   publisher: { "@type": "Organization", name: "Kauna Healthy", url: "https://healthy.getkauna.com" },
 };
 
-export default function ArticleSkinnyFat() {
+function ContentId() {
   return (
-    <ArticleLayout activeHref="/artikel/tanda-tanda-kurus-tidak-sehat">
+    <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       <header className="mb-8">
@@ -140,6 +140,150 @@ export default function ArticleSkinnyFat() {
         </div>
 
       </div>
-    </ArticleLayout>
+    </>
+  );
+}
+
+function ContentEn() {
+  return (
+    <>
+      <header className="mb-8">
+        <span className="inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full bg-purple-100 text-purple-700 mb-3">Body Composition</span>
+        <h1 className="text-3xl font-bold text-emerald-900 leading-tight mb-3">
+          Signs of Being Unhealthily Thin (Skinny Fat) That Are Often Ignored
+        </h1>
+        <p className="text-emerald-700/70 text-base leading-relaxed">
+          A normal BMI is no guarantee of good health. The "skinny fat" phenomenon is more common than you think — and more dangerous than it looks.
+        </p>
+      </header>
+
+      <div className="space-y-8 text-emerald-950/80">
+
+        <section>
+          <h2 className="text-xl font-bold text-emerald-900 mb-3">What Is Skinny Fat? (MONW)</h2>
+          <p className="leading-relaxed text-sm sm:text-base mb-3">
+            <strong>Skinny fat</strong> — clinically known as MONW (Metabolically Obese Normal Weight) — is a condition where a person has a normal or even low body weight and BMI, yet carries a high percentage of body fat and very little muscle mass.
+          </p>
+          <p className="leading-relaxed text-sm sm:text-base mb-3">
+            People with this condition may not look overweight from the outside, but metabolically they carry health risks equal to or even exceeding those of people with obesity — including type 2 diabetes, heart disease, and metabolic syndrome.
+          </p>
+          <div className="rounded-2xl bg-purple-50 border border-purple-100 p-4">
+            <p className="text-sm font-semibold text-purple-800 mb-3">Illustration — same BMI, very different body composition:</p>
+            <div className="overflow-x-auto">
+              <table className="w-full text-xs text-center">
+                <thead>
+                  <tr>
+                    <th className="px-3 py-2 font-semibold text-gray-600 text-left">Measurement</th>
+                    <th className="px-3 py-2 font-semibold text-red-600">Skinny Fat</th>
+                    <th className="px-3 py-2 font-semibold text-green-600">Healthy Thin</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-purple-100">
+                  {[
+                    { label: "Body weight", skinny: "55 kg", healthy: "55 kg" },
+                    { label: "BMI", skinny: "21 (normal)", healthy: "21 (normal)" },
+                    { label: "Body fat %", skinny: "32% (high)", healthy: "20% (healthy)" },
+                    { label: "Muscle mass", skinny: "Very low", healthy: "Adequate" },
+                  ].map((row) => (
+                    <tr key={row.label} className="bg-white/60">
+                      <td className="px-3 py-2 text-left text-gray-600 font-medium">{row.label}</td>
+                      <td className="px-3 py-2 text-red-500">{row.skinny}</td>
+                      <td className="px-3 py-2 text-green-600">{row.healthy}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-emerald-900 mb-4">6 Signs of Being Unhealthily Thin</h2>
+          <div className="space-y-3">
+            {[
+              { sign: "Body feels soft despite normal weight", detail: "Little or no muscle density. Pressing the upper arms, belly, or thighs feels soft like cotton — not firm." },
+              { sign: "Constant fatigue and low energy", detail: "Low muscle mass means lower energy reserves and physical strength. Simple activities like climbing stairs or carrying groceries feel exhausting." },
+              { sign: "Pot belly despite a thin frame", detail: "Visceral fat can accumulate in the abdomen even when other body parts are slim. A waist circumference above the threshold (90 cm for men, 80 cm for women) is a strong sign of skinny fat." },
+              { sign: "Abnormal blood sugar or cholesterol", detail: "Blood tests may reveal insulin resistance, high triglycerides, or low HDL — all signs of metabolic syndrome that are invisible from the outside." },
+              { sign: "Poor exercise tolerance despite being 'thin'", detail: "Very low strength and endurance compared to others of similar weight — because there is no muscle to support physical effort." },
+              { sign: "Strict dieting but weight barely drops", detail: "A low basal metabolic rate (due to insufficient muscle) makes it harder to create a calorie deficit. The body adapts quickly to low intake." },
+            ].map((item) => (
+              <div key={item.sign} className="rounded-2xl bg-gray-50 border border-gray-100 p-4">
+                <p className="font-semibold text-emerald-800 text-sm mb-1.5">⚠ {item.sign}</p>
+                <p className="text-sm text-gray-600 leading-relaxed">{item.detail}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-emerald-900 mb-4">4 Main Causes of Skinny Fat</h2>
+          <div className="space-y-2">
+            {[
+              { cause: "Strict dieting without exercise", desc: "Losing weight through diet alone (especially very low calorie diets) causes muscle loss alongside fat — resulting in a smaller body with the same poor composition." },
+              { cause: "Physical inactivity", desc: "A sedentary lifestyle gradually causes muscle atrophy. Muscle mass decreases and is replaced by fat — even if total body weight does not change much." },
+              { cause: "Low protein intake", desc: "A low-protein diet does not provide the building blocks to maintain and build muscle, accelerating muscle mass loss with age." },
+              { cause: "Genetics and hormones", desc: "Some people are genetically predisposed to store more visceral fat compared to subcutaneous fat, or have lower insulin sensitivity — making the risk of skinny fat higher." },
+            ].map((item) => (
+              <div key={item.cause} className="border-l-4 border-purple-300 pl-4">
+                <p className="font-semibold text-emerald-900 text-sm mb-1">{item.cause}</p>
+                <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-emerald-900 mb-4">5-Step Body Recomposition Plan</h2>
+          <p className="leading-relaxed text-sm sm:text-base mb-4">
+            For skinny fat, the goal is not simply "lose weight" — it is <strong>body recomposition</strong>: building muscle while reducing fat at the same time.
+          </p>
+          <div className="space-y-3">
+            {[
+              { no: "1", title: "Start weight training", body: "This is the single most important change. Weight training 3x per week — squats, deadlifts, bench press, pull-ups — stimulates muscle growth and raises your basal metabolic rate. Without this, no amount of dieting will fix body composition." },
+              { no: "2", title: "Increase protein intake", body: "Target 1.6–2 grams of protein per kg of body weight per day. Protein provides the raw material for building muscle and keeps you fuller for longer." },
+              { no: "3", title: "Avoid a large calorie deficit", body: "For recomposition, eat around your TDEE (maintenance) or a small deficit (200–300 kcal). A large deficit will impair muscle growth." },
+              { no: "4", title: "Add moderate cardio", body: "Brisk walking or cycling 2–3x per week supports cardiovascular health and burns some fat without interfering with muscle recovery." },
+              { no: "5", title: "Get enough sleep and manage stress", body: "Growth hormone is produced during sleep. High cortisol from stress inhibits muscle growth and promotes visceral fat storage." },
+            ].map((item) => (
+              <div key={item.no} className="flex gap-4 bg-white rounded-xl border border-slate-100 p-4">
+                <span className="w-7 h-7 rounded-full bg-purple-600 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">{item.no}</span>
+                <div>
+                  <p className="text-sm font-semibold text-slate-800 mb-1">{item.title}</p>
+                  <p className="text-sm text-gray-600 leading-relaxed">{item.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <div className="rounded-2xl bg-amber-50 border border-amber-200 p-5">
+          <p className="font-semibold text-amber-800 mb-2 text-sm">Medical Disclaimer</p>
+          <p className="text-sm leading-relaxed text-amber-700/80">
+            If you suspect you have skinny fat, consider getting blood work done (fasting blood glucose, lipid panel, HbA1c) to understand your true metabolic status. Consult a doctor for a comprehensive evaluation.
+          </p>
+        </div>
+
+        <div className="rounded-2xl bg-emerald-600 p-5 text-center">
+          <p className="text-white font-semibold mb-1 text-sm">Check your body composition now</p>
+          <p className="text-emerald-100 text-xs mb-4">Body fat percentage and waist circumference — free</p>
+          <div className="flex gap-3 justify-center flex-wrap">
+            <Link href="/lemak" className="inline-block bg-white text-emerald-700 font-semibold text-sm px-4 py-2 rounded-xl hover:bg-emerald-50 transition-colors">Body Fat Calculator →</Link>
+            <Link href="/pinggang" className="inline-block bg-emerald-500 text-white font-semibold text-sm px-4 py-2 rounded-xl hover:bg-emerald-400 transition-colors">Waist Calculator →</Link>
+          </div>
+        </div>
+
+      </div>
+    </>
+  );
+}
+
+export default function ArticleSkinnyFat() {
+  return (
+    <ArticleLayout
+      activeHref="/artikel/tanda-tanda-kurus-tidak-sehat"
+      childrenId={<ContentId />}
+      childrenEn={<ContentEn />}
+    />
   );
 }

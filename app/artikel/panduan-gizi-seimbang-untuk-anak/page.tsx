@@ -20,9 +20,9 @@ const schema = {
   publisher: { "@type": "Organization", name: "Kauna Healthy", url: "https://healthy.getkauna.com" },
 };
 
-export default function ArticleGiziAnak() {
+function ContentId() {
   return (
-    <ArticleLayout activeHref="/artikel/panduan-gizi-seimbang-untuk-anak">
+    <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       <header className="mb-8">
@@ -180,6 +180,178 @@ export default function ArticleGiziAnak() {
         </div>
 
       </div>
-    </ArticleLayout>
+    </>
+  );
+}
+
+function ContentEn() {
+  return (
+    <>
+      <header className="mb-8">
+        <span className="inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full bg-pink-100 text-pink-700 mb-3">Child Nutrition</span>
+        <h1 className="text-3xl font-bold text-emerald-900 leading-tight mb-3">
+          Balanced Nutrition Guide for Children
+        </h1>
+        <p className="text-emerald-700/70 text-base leading-relaxed">
+          Nutrition during childhood shapes the foundation of lifelong health. Here is what every parent needs to know.
+        </p>
+      </header>
+
+      <div className="space-y-8 text-emerald-950/80">
+
+        <section>
+          <h2 className="text-xl font-bold text-emerald-900 mb-3">Why Is Child Nutrition So Critical?</h2>
+          <p className="leading-relaxed text-sm sm:text-base mb-3">
+            Childhood — especially the first 1,000 days of life (from conception to age 2) — is the most critical window for brain development, immune system formation, and bone building. Nutritional deficiencies during this period can have permanent consequences that cannot be fully corrected later in life.
+          </p>
+          <p className="leading-relaxed text-sm sm:text-base">
+            Indonesia still faces a double burden of malnutrition: stunting (chronic undernutrition) affects 1 in 5 children, while childhood obesity is rapidly rising as diets shift toward ultra-processed foods. Both are equally dangerous and preventable.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-emerald-900 mb-4">Calorie Needs by Age</h2>
+          <div className="overflow-x-auto rounded-2xl border border-emerald-100 shadow-sm mb-3">
+            <table className="w-full text-sm">
+              <thead className="bg-emerald-50">
+                <tr>
+                  <th className="text-left px-4 py-3 font-semibold text-emerald-700">Age</th>
+                  <th className="text-left px-4 py-3 font-semibold text-emerald-700">Boys</th>
+                  <th className="text-left px-4 py-3 font-semibold text-emerald-700">Girls</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-emerald-50">
+                {[
+                  { age: "1–3 years", boys: "1,000–1,400 kcal", girls: "1,000–1,400 kcal" },
+                  { age: "4–8 years", boys: "1,200–1,600 kcal", girls: "1,200–1,400 kcal" },
+                  { age: "9–13 years", boys: "1,600–2,200 kcal", girls: "1,400–2,000 kcal" },
+                  { age: "14–18 years", boys: "2,000–3,200 kcal", girls: "1,800–2,400 kcal" },
+                ].map((row) => (
+                  <tr key={row.age} className="bg-white hover:bg-emerald-50/40 transition-colors">
+                    <td className="px-4 py-3 font-medium text-gray-700">{row.age}</td>
+                    <td className="px-4 py-3 font-mono text-blue-600 text-xs sm:text-sm">{row.boys}</td>
+                    <td className="px-4 py-3 font-mono text-pink-600 text-xs sm:text-sm">{row.girls}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-gray-400">Source: Dietary Reference Intakes (DRI), Institute of Medicine. Ranges vary based on activity level.</p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-emerald-900 mb-4">5 Critical Nutrients for Child Development</h2>
+          <div className="space-y-3">
+            {[
+              {
+                nutrient: "Protein",
+                role: "Builds and repairs body tissues, including muscles and the brain.",
+                source: "Eggs, chicken, fish, tofu, tempeh, legumes, dairy",
+                need: "0.85–1.1 g/kg body weight/day (increases during puberty)",
+              },
+              {
+                nutrient: "Calcium",
+                role: "Builds bone and tooth density — a lifetime investment in skeletal health.",
+                source: "Milk, cheese, yogurt, anchovies, spinach, broccoli, tofu",
+                need: "700–1,300 mg/day (highest at ages 9–18 during peak growth)",
+              },
+              {
+                nutrient: "Iron",
+                role: "Carries oxygen to the brain and muscles. Iron deficiency is the leading cause of anemia and cognitive impairment in children.",
+                source: "Red meat, chicken liver, tempeh, spinach, kidney beans, fortified cereals",
+                need: "7–11 mg/day. Girls need more after menstruation begins.",
+              },
+              {
+                nutrient: "Vitamin D",
+                role: "Aids calcium absorption and supports immune function and brain development.",
+                source: "Sun exposure (15 min/day), fatty fish, egg yolks, fortified milk",
+                need: "600–1,000 IU/day. Many Indonesian children are deficient due to limited sun exposure.",
+              },
+              {
+                nutrient: "Zinc",
+                role: "Essential for growth, wound healing, immune function, and sexual development.",
+                source: "Red meat, shellfish, legumes, pumpkin seeds, dairy",
+                need: "3–11 mg/day (increases with age and sex)",
+              },
+            ].map((item) => (
+              <div key={item.nutrient} className="rounded-2xl bg-gray-50 border border-gray-100 p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <p className="font-bold text-emerald-800">{item.nutrient}</p>
+                  <span className="text-xs text-gray-400 font-mono">{item.need}</span>
+                </div>
+                <p className="text-sm text-gray-600 leading-relaxed mb-2">{item.role}</p>
+                <p className="text-xs text-emerald-600 font-medium">Sources: {item.source}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-emerald-900 mb-4">Healthy Eating Guide for Children: The Plate Method</h2>
+          <div className="space-y-3">
+            {[
+              { title: "Fill half the plate with fruits and vegetables", body: "Aim for a variety of colors — each color contains different phytonutrients. Serve vegetables in different ways: soups, stir-fries, or as snacks with yogurt dip." },
+              { title: "A quarter of the plate: complex carbohydrates", body: "Rice, oats, whole grain bread, sweet potato, or corn. Avoid replacing these with white rice and instant noodles every day — variety in carbohydrate sources matters." },
+              { title: "A quarter of the plate: protein", body: "Eggs, chicken, fish, tempeh, or tofu at every meal. Children who get enough protein rarely oversnack because they stay fuller longer." },
+              { title: "Dairy 2–3 servings per day", body: "For children aged 1–8: 2 glasses of milk per day. Ages 9–18: 3 glasses. Alternatives include yogurt or cheese." },
+              { title: "Limit ultra-processed foods and added sugar", body: "WHO recommends free sugars make up less than 10% of total calories — about 6–10 teaspoons per day. Sugary drinks, chips, and commercial biscuits often exceed this in a single serving." },
+            ].map((item, i) => (
+              <div key={i} className="flex gap-4 bg-white rounded-xl border border-slate-100 p-4">
+                <span className="w-7 h-7 rounded-full bg-pink-500 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
+                <div>
+                  <p className="text-sm font-semibold text-slate-800 mb-1">{item.title}</p>
+                  <p className="text-sm text-gray-600 leading-relaxed">{item.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-emerald-900 mb-4">6 Tips to Get Children Eating Healthy</h2>
+          <div className="space-y-2">
+            {[
+              "Involve children in choosing and preparing food — kids are far more willing to eat what they helped make.",
+              "Offer new foods repeatedly — research shows children need 10–15 exposures before accepting a new food.",
+              "Do not use dessert as a reward for eating vegetables — this creates an unhealthy emotional relationship with food.",
+              "Eat together as a family as often as possible — children mirror their parents' eating habits.",
+              "Vary how food is presented — the same vegetable can be more appealing cut differently or mixed into fried rice.",
+              "Do not force children to finish their plate — teach them to recognize their own hunger and fullness signals.",
+            ].map((tip, i) => (
+              <div key={i} className="flex gap-3 items-start rounded-xl bg-pink-50 border border-pink-100 p-3">
+                <span className="text-pink-500 font-bold text-sm mt-0.5 shrink-0">✓</span>
+                <p className="text-sm text-gray-600 leading-relaxed">{tip}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <div className="rounded-2xl bg-amber-50 border border-amber-200 p-5">
+          <p className="font-semibold text-amber-800 mb-2 text-sm">Note for Parents</p>
+          <p className="text-sm leading-relaxed text-amber-700/80">
+            This article is a general guide. Every child is unique — nutritional needs may differ based on medical conditions, allergies, or other special needs. Consult a pediatrician or registered dietitian for personalized guidance.
+          </p>
+        </div>
+
+        <div className="rounded-2xl bg-emerald-600 p-5 text-center">
+          <p className="text-white font-semibold mb-1 text-sm">Check your child&apos;s growth status</p>
+          <p className="text-emerald-100 text-xs mb-3">BMI and percentile based on CDC growth charts for ages 2–18</p>
+          <Link href="/anak" className="inline-block bg-white text-emerald-700 font-semibold text-sm px-6 py-2.5 rounded-xl hover:bg-emerald-50 transition-colors">
+            Child BMI Calculator →
+          </Link>
+        </div>
+
+      </div>
+    </>
+  );
+}
+
+export default function ArticleGiziAnak() {
+  return (
+    <ArticleLayout
+      activeHref="/artikel/panduan-gizi-seimbang-untuk-anak"
+      childrenId={<ContentId />}
+      childrenEn={<ContentEn />}
+    />
   );
 }
