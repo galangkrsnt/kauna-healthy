@@ -39,6 +39,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: "https://healthy.getkauna.com/artikel",
+      lastModified: new Date("2026-05-12"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: "https://healthy.getkauna.com/artikel/bmi-normal-orang-indonesia",
+      lastModified: new Date("2026-05-12"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: "https://healthy.getkauna.com/artikel/kebutuhan-kalori-harian",
+      lastModified: new Date("2026-05-12"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: "https://healthy.getkauna.com/artikel/kebutuhan-air-minum-harian",
+      lastModified: new Date("2026-05-12"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: "https://healthy.getkauna.com/artikel/cara-mengukur-lemak-tubuh",
+      lastModified: new Date("2026-05-12"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: "https://healthy.getkauna.com/artikel/berat-badan-ideal-anak",
+      lastModified: new Date("2026-05-12"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: "https://healthy.getkauna.com/tentang",
       lastModified: new Date("2026-04-20"),
       changeFrequency: "yearly",
