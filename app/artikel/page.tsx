@@ -45,6 +45,62 @@ const articles = [
     tag: "Anak",
     color: "pink",
   },
+  {
+    href: "/artikel/cara-menurunkan-berat-badan-tanpa-diet-ketat",
+    title: "Cara Turun Berat Badan Tanpa Diet Ketat",
+    desc: "Diet ekstrem tidak berhasil jangka panjang. Pelajari pendekatan ilmiah: 7 perubahan kecil yang berdampak besar tanpa menyiksa diri.",
+    tag: "Diet",
+    color: "emerald",
+  },
+  {
+    href: "/artikel/perbedaan-bmi-dan-lemak-tubuh",
+    title: "BMI vs Lemak Tubuh: Mana Lebih Akurat?",
+    desc: "BMI dan persentase lemak tubuh mengukur hal berbeda. Kapan harus pakai BMI, kapan perlu ukur lemak tubuh, dan kapan keduanya menyesatkan.",
+    tag: "Analisis Tubuh",
+    color: "blue",
+  },
+  {
+    href: "/artikel/bahaya-lemak-perut-visceral",
+    title: "Bahaya Lemak Perut (Visceral)",
+    desc: "Lemak di dalam perut yang mengelilingi organ jauh lebih berbahaya dari lemak yang bisa dicubit. Pelajari risikonya dan cara mengukurnya.",
+    tag: "Kesehatan Metabolik",
+    color: "red",
+  },
+  {
+    href: "/artikel/makanan-tinggi-protein-untuk-diet",
+    title: "Makanan Tinggi Protein untuk Diet",
+    desc: "Daftar lengkap sumber protein hewani dan nabati terbaik di Indonesia, berapa kebutuhan protein per hari, dan tips memenuhi target proteinmu.",
+    tag: "Nutrisi",
+    color: "orange",
+  },
+  {
+    href: "/artikel/olahraga-terbaik-untuk-bakar-lemak",
+    title: "Olahraga Terbaik untuk Membakar Lemak",
+    desc: "Kardio atau latihan beban? Jawabannya tidak sederhana. Pelajari ilmu di balik pembakaran lemak dan cara menyusun program olahraga optimal.",
+    tag: "Olahraga",
+    color: "green",
+  },
+  {
+    href: "/artikel/tanda-tanda-kurus-tidak-sehat",
+    title: "Tanda-tanda Kurus Tidak Sehat (Skinny Fat)",
+    desc: "BMI normal bukan jaminan sehat. Skinny fat — kurus tapi lemak tinggi dan otot rendah — memiliki risiko metabolik yang serius.",
+    tag: "Komposisi Tubuh",
+    color: "purple",
+  },
+  {
+    href: "/artikel/panduan-gizi-seimbang-untuk-anak",
+    title: "Panduan Gizi Seimbang untuk Anak",
+    desc: "Kebutuhan kalori, protein, kalsium, zat besi, dan vitamin D anak sesuai usia — plus tips praktis agar anak mau makan sehat.",
+    tag: "Gizi Anak",
+    color: "pink",
+  },
+  {
+    href: "/artikel/efek-kurang-tidur-terhadap-berat-badan",
+    title: "Efek Kurang Tidur terhadap Berat Badan",
+    desc: "Kurang tidur meningkatkan hormon lapar, menurunkan willpower, dan merusak metabolisme. Inilah mengapa tidur adalah bagian dari diet.",
+    tag: "Tidur & Metabolisme",
+    color: "indigo",
+  },
 ];
 
 const tagColor: Record<string, string> = {

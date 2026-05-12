@@ -15,6 +15,14 @@ const artikelLinks = [
   { href: "/artikel/kebutuhan-air-minum-harian", label: "Kebutuhan Air Minum" },
   { href: "/artikel/cara-mengukur-lemak-tubuh", label: "Mengukur Lemak Tubuh" },
   { href: "/artikel/berat-badan-ideal-anak", label: "Berat Badan Ideal Anak" },
+  { href: "/artikel/cara-menurunkan-berat-badan-tanpa-diet-ketat", label: "Turun BB Tanpa Diet Ketat" },
+  { href: "/artikel/perbedaan-bmi-dan-lemak-tubuh", label: "BMI vs Lemak Tubuh" },
+  { href: "/artikel/bahaya-lemak-perut-visceral", label: "Bahaya Lemak Perut" },
+  { href: "/artikel/makanan-tinggi-protein-untuk-diet", label: "Makanan Tinggi Protein" },
+  { href: "/artikel/olahraga-terbaik-untuk-bakar-lemak", label: "Olahraga Bakar Lemak" },
+  { href: "/artikel/tanda-tanda-kurus-tidak-sehat", label: "Kurus Tidak Sehat" },
+  { href: "/artikel/panduan-gizi-seimbang-untuk-anak", label: "Gizi Seimbang Anak" },
+  { href: "/artikel/efek-kurang-tidur-terhadap-berat-badan", label: "Tidur & Berat Badan" },
 ];
 
 export default function ArticleLayout({
